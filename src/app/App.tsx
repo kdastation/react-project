@@ -5,11 +5,9 @@ import "./styles/index.scss";
 import { Header } from "widgets/Header";
 
 const App = () => {
-  const { toggleTheme, theme } = useTheme();
-
+  const { theme } = useTheme();
   return (
     <div className={classNames("app", [theme], {})}>
-      <div onClick={() => toggleTheme(theme)}>asdasdad</div>
       <Header />
       <AppRouter />
     </div>

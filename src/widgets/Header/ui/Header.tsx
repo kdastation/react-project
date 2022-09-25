@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styles from "./Header.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 
 interface HeaderProps {
   className?: string;
@@ -10,6 +11,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <div className={classNames(styles.header, [className])}>
+      <ThemeSwitcher />
       <AppLink theme={AppLinkTheme.INVERTED_PRIMARY} to={"/about"}>
         about
       </AppLink>
