@@ -1,10 +1,10 @@
+import { FC, useMemo, useState } from 'react';
 import {
   Theme,
   IThemeValues,
   ThemeContext,
   ThemeContextProps,
-} from "../lib/ThemeContext";
-import { FC, useMemo, useState } from "react";
+} from '../lib/ThemeContext';
 
 const ThemeProvider: FC = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
@@ -14,12 +14,10 @@ const ThemeProvider: FC = ({ children }) => {
     setTheme(newTheme);
   };
 
-  const providerValues: IThemeValues = useMemo(() => {
-    return {
-      theme,
-      toggleTheme,
-    };
-  }, [theme]);
+  const providerValues: IThemeValues = useMemo(() => ({
+    theme,
+    toggleTheme,
+  }), [theme]);
 
   return (
     <ThemeContext.Provider value={providerValues}>

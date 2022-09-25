@@ -1,7 +1,7 @@
-import { RouterPathNames } from "./routerConfig";
-import { RouteProps } from "react-router-dom";
+import { RouteProps } from 'react-router-dom';
+import { RouterPathNames } from './routerConfig';
 
-type RoutePropsApp = Omit<RouteProps, "path">;
+type RoutePropsApp = Omit<RouteProps, 'path'>;
 
 export type IRoute = {
   path: RouterPathNames;

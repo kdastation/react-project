@@ -1,5 +1,3 @@
-const AboutPage = () => {
-  return <div>ABOUT PAGE</div>
-}
+const AboutPage = () => <div>ABOUT PAGE</div>;
 
-export {AboutPage}
+export { AboutPage };
