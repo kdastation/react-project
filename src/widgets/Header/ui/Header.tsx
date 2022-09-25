@@ -9,7 +9,12 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ className }) => (
-  <div className={classNames(styles.header, [className])}>
+  <div
+    className={classNames(
+      styles.header,
+      [className],
+    )}
+  >
     <ThemeSwitcher />
     <AppLink theme={AppLinkTheme.INVERTED_PRIMARY} to="/about">
       about
