@@ -12,6 +12,7 @@ const Header: FC<HeaderProps> = ({ className }) => (
   <div
     className={classNames(
       styles.header,
+      {},
       [className],
     )}
   >

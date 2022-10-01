@@ -3,7 +3,6 @@ import {
   Theme,
   IThemeValues,
   ThemeContext,
-  ThemeContextProps,
 } from '../lib/ThemeContext';
 
 const ThemeProvider: FC = ({ children }) => {
