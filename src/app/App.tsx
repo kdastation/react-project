@@ -10,8 +10,8 @@ function App() {
     <div
       className={classNames(
         'app',
-        [theme],
         {},
+        [theme],
       )}
     >
       <Header />
