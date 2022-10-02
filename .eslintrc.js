@@ -36,5 +36,6 @@ module.exports = {
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 1,
     'max-len': ['error', { ignoreComments: true }],
+    'linebreak-style': 0,
   },
 };
