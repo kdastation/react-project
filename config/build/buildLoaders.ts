@@ -1,7 +1,7 @@
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/configTypes';
 import { cssLoader } from './loaders/cssLoader';
+import { svgLoaders } from './loaders/svgLoader';
 
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const { isDev } = options;
@@ -17,10 +17,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     },
   };
 
-  const svgLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  };
+  const svgLoader = svgLoaders();
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,

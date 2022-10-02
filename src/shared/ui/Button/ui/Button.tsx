@@ -1,14 +1,19 @@
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
+export enum ButtonTheme {
+  PRIMARY = 'primary',
+  CLEAR = 'clear',
+}
+
 type ButtonProps = {
-  theme?: string
+  theme?: ButtonTheme,
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button: FC<ButtonProps> = ({
   children,
-  theme,
+  theme = ButtonTheme.PRIMARY,
   className,
   ...otherProps
 }) => (
@@ -27,4 +32,4 @@ const Button: FC<ButtonProps> = ({
   </button>
 );
 
-export default Button;
+export { Button };
