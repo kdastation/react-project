@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
@@ -7,14 +7,15 @@ export enum ButtonTheme {
   CLEAR = 'clear',
 }
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   theme?: ButtonTheme,
-} & ButtonHTMLAttributes<HTMLButtonElement>
+}
 
 const Button: FC<ButtonProps> = ({
   children,
   theme = ButtonTheme.PRIMARY,
   className,
+  type = 'button',
   ...otherProps
 }) => (
   <button
@@ -26,7 +27,10 @@ const Button: FC<ButtonProps> = ({
         styles[theme],
       ],
     )}
+    /* eslint-disable-next-line react/button-has-type */
+    type={type}
     {...otherProps}
+
   >
     {children}
   </button>
