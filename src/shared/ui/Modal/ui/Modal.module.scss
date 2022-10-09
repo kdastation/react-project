@@ -1,0 +1,17 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  z-index: var(--z-index-modal);
+}
+
+.content {
+  padding: 15px;
+  background-color: var(--inverted-bg-color);
+}
