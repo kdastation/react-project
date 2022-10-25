@@ -1,3 +1,5 @@
+import { MODULE_NAME_USER_SLICE, UserSliceState } from 'entities/User';
+
 export type State = {
-  count: number
+  [MODULE_NAME_USER_SLICE]: UserSliceState
 }
