@@ -4,6 +4,7 @@ import {
   ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { LoginModal } from './LoginModal';
 
 export default {
@@ -23,7 +24,14 @@ LoginModalLight.args = {
   isOpen: true,
 };
 
-LoginModalLight.decorators = [ThemeDecorator(Theme.DARK)];
+LoginModalLight.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+  loginByUserName: {
+    username: 'asdsadasd',
+    password: 'asdasdasd',
+    isLoading: false,
+    error: null,
+  },
+})];
 
 export const LoginModalDark: ComponentStory<typeof LoginModal> = (
   args,
@@ -33,4 +41,11 @@ LoginModalDark.args = {
   isOpen: true,
 };
 
-LoginModalDark.decorators = [ThemeDecorator(Theme.LIGHT)];
+LoginModalDark.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+  loginByUserName: {
+    username: 'asdsadasd',
+    password: 'asdasdasd',
+    isLoading: false,
+    error: null,
+  },
+})];

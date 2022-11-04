@@ -4,6 +4,7 @@ import {
   ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { LoginForm } from './LoginForm';
 
 export default {
@@ -19,7 +20,14 @@ export const LoginFormLight: ComponentStory<typeof LoginForm> = (
   <LoginForm {...args} />
 );
 
-LoginFormLight.decorators = [ThemeDecorator(Theme.DARK)];
+LoginFormLight.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+  loginByUserName: {
+    username: 'asd',
+    password: 'qweqwe',
+    error: null,
+    isLoading: false,
+  },
+})];
 
 export const LoginFormDark: ComponentStory<typeof LoginForm> = (
   args,
@@ -27,4 +35,11 @@ export const LoginFormDark: ComponentStory<typeof LoginForm> = (
   <LoginForm {...args} />
 );
 
-LoginFormDark.decorators = [ThemeDecorator(Theme.LIGHT)];
+LoginFormDark.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
+  loginByUserName: {
+    username: 'asd',
+    password: 'qweqwe',
+    error: null,
+    isLoading: false,
+  },
+})];
