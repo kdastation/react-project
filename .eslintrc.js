@@ -35,10 +35,11 @@ module.exports = {
     'no-shadow': 0,
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 1,
-    'max-len': ['error', { ignoreComments: true }],
+    'max-len': ['error', { ignoreComments: true, code: 100 }],
     'linebreak-style': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'react/jsx-no-useless-fragment': 0,
+    'no-param-reassign': ['error', { props: false }],
   },
 };

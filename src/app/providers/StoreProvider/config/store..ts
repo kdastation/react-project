@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
+import { State } from './storeTypes';
+import { rootReducer } from './rootReducer';
 
 export const createReduxStore = (
   initialState?: State,
-) => configureStore({
-  reducer: {},
+) => configureStore<State>({
+  reducer: rootReducer,
   devTools: true,
   preloadedState: initialState,
 });

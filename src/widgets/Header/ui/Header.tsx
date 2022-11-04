@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { Button } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal';
+import { LoginModal } from 'features/LoginByUserName';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
@@ -11,14 +11,14 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ className }) => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenLoginFormModal, setIsOpenLoginFormModal] = useState(false);
 
-  const toggleVisibleModal = () => {
-    setIsOpenModal((prev) => !prev);
+  const handleShowLoginFormModal = () => {
+    setIsOpenLoginFormModal(true);
   };
 
-  const handleCloseModal = () => {
-    setIsOpenModal(false);
+  const handleCloseLoginFormModal = () => {
+    setIsOpenLoginFormModal(false);
   };
 
   return (
@@ -37,18 +37,15 @@ const Header: FC<HeaderProps> = ({ className }) => {
         main
       </AppLink>
       <Button
-        onClick={toggleVisibleModal}
+        onClick={handleShowLoginFormModal}
       >
-        modal
+        войти
       </Button>
-      <Modal
-        isOpen={isOpenModal}
-        onClose={handleCloseModal}
-      >
-        <div>
-          asdasdasmdkasmdkasdmaskdmaskamskdasmkdaskdas
-        </div>
-      </Modal>
+      <LoginModal
+        isOpen={isOpenLoginFormModal}
+        onClose={handleCloseLoginFormModal}
+      />
+
     </div>
   );
 };
