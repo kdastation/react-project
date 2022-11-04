@@ -1,5 +1,7 @@
-import { MODULE_NAME_USER_SLICE, UserSliceState } from 'entities/User';
+import { UserSliceState } from 'entities/User';
+import { LoginByUserNameSliceState } from 'features/LoginByUserName/index';
 
 export type State = {
-  [MODULE_NAME_USER_SLICE]: UserSliceState
+  user: UserSliceState,
+  loginByUserName: LoginByUserNameSliceState
 }

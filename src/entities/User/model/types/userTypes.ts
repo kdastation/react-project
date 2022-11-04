@@ -4,7 +4,6 @@ export type UserData = {
 }
 
 export type UserSliceState = {
-  isAuth: boolean,
   userData: UserData | null
 }
 
