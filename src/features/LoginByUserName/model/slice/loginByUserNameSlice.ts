@@ -8,7 +8,7 @@ import {
   LoginByUserNameSliceState,
 } from '../types/types';
 
-const initialState: LoginByUserNameSliceState = {
+export const initialState: LoginByUserNameSliceState = {
   username: '',
   password: '',
   isLoading: false,

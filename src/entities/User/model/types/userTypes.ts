@@ -1,6 +1,6 @@
 export type UserData = {
   id: number,
-  login: string
+  username: string
 }
 
 export type UserSliceState = {
