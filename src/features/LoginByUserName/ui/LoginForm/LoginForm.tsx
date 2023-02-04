@@ -3,12 +3,24 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useDispatch, useSelector } from 'react-redux';
 import { TextField } from 'shared/ui/TextField';
 import { login } from 'features/LoginByUserName/model/async-thunks/login/login';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { rootSelectorLoginByUserName } from '../../model/selectors/root';
-import { loginByUserNameActions } from '../../model/slice/loginByUserNameSlice';
+import {
+  loginByUserNameActions,
+  loginByUserNameReducer,
+} from '../../model/slice/loginByUserNameSlice';
 import styles from './LoginForm.module.scss';
+
+const initialReducers: ReducersList = {
+  loginByUserName: loginByUserNameReducer,
+};
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
   const {
     username,
     password,
@@ -30,23 +42,27 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className={classNames(
-      styles.container,
-    )}
+    <DynamicModuleLoader
+      reducers={initialReducers}
     >
-      <TextField
-        onChangeValue={handleChangeUserName}
-        value={username}
-      />
-      <TextField
-        onChangeValue={handleChangePassword}
-        value={password}
-      />
-      <Button
-        onClick={handleLogin}
+      <div className={classNames(
+        styles.container,
+      )}
       >
-        Войти
-      </Button>
-    </div>
+        <TextField
+          onChangeValue={handleChangeUserName}
+          value={username}
+        />
+        <TextField
+          onChangeValue={handleChangePassword}
+          value={password}
+        />
+        <Button
+          onClick={handleLogin}
+        >
+          Войти
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
 };
