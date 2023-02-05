@@ -8,8 +8,6 @@ export type ReducersList = {
   [key in KeysReducers]?: Reducer
 }
 
-type ReducersListEntry = [KeysReducers, Reducer]
-
 type DynamicModuleLoaderProps = {
   reducers: ReducersList
 }
@@ -22,14 +20,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   const store = useStore() as ReduxStoreWithReducerManager;
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([key, reducer]: ReducersListEntry) => {
-      store.reducerManager.add(key, reducer);
+    Object.entries(reducers).forEach(([key, reducer]) => {
+      store.reducerManager.add(key as KeysReducers, reducer);
       dispatch({ type: `@INIT ${key} reducer` });
     });
 
     return () => {
-      Object.entries(reducers).forEach(([key]: ReducersListEntry) => {
-        store.reducerManager.remove(key);
+      Object.entries(reducers).forEach(([key]) => {
+        store.reducerManager.remove(key as KeysReducers);
         dispatch({ type: `@DESTROY ${key} reducer` });
       });
     };
