@@ -12,7 +12,7 @@ export const login = createAsyncThunk<UserData, LoginArgs, ThunkConfig<string>>(
       const userData = receivedData.data;
       thunk.dispatch(userActions.setUserData(userData));
       return userData;
-    } catch (error) {
+    } catch (error: any) {
       return thunk.rejectWithValue(error.message);
     }
   },

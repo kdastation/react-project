@@ -28,7 +28,7 @@ export type ReduxStoreWithReducerManager = EnhancedStore<State> & {
 
 export type ThunkExtraArgs = {
   api: AxiosInstance,
-  navigate: NavigateFunction
+  navigate?: NavigateFunction
 }
 
 export type ThunkConfig<T> = {

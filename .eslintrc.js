@@ -41,5 +41,6 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'react/jsx-no-useless-fragment': 0,
     'no-param-reassign': ['error', { props: false }],
+    'no-undef': 'off',
   },
 };
