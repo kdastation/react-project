@@ -8,6 +8,7 @@ import {
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { FC } from 'react';
 import { rootSelectorLoginByUserName } from '../../model/selectors/root';
 import {
   loginByUserNameActions,
@@ -19,7 +20,13 @@ const initialReducers: ReducersList = {
   loginByUserName: loginByUserNameReducer,
 };
 
-export const LoginForm = () => {
+type LoginFormProps = {
+  onSuccess?: () => void
+}
+
+export const LoginForm: FC<LoginFormProps> = ({
+  onSuccess,
+}) => {
   const dispatch = useAppDispatch();
 
   const {
@@ -36,10 +43,13 @@ export const LoginForm = () => {
   };
 
   const handleLogin = async () => {
-    dispatch(login({
+    const result = await dispatch(login({
       username,
       password,
     }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess?.();
+    }
   };
 
   return (
