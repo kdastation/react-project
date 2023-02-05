@@ -1,12 +1,13 @@
 import { Button } from 'shared/ui/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { TextField } from 'shared/ui/TextField';
 import { login } from 'features/LoginByUserName/model/async-thunks/login/login';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { rootSelectorLoginByUserName } from '../../model/selectors/root';
 import {
   loginByUserNameActions,
@@ -19,7 +20,7 @@ const initialReducers: ReducersList = {
 };
 
 export const LoginForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const {
     username,
@@ -34,7 +35,7 @@ export const LoginForm = () => {
     dispatch(loginByUserNameActions.setPassword(value));
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     dispatch(login({
       username,
       password,

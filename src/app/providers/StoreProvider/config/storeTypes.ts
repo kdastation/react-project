@@ -4,6 +4,7 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
+import { createReduxStore } from 'app/providers/StoreProvider';
 
 export type State = {
   user: UserSliceState,
@@ -22,3 +23,5 @@ export type ReducerManager = {
 export type ReduxStoreWithReducerManager = EnhancedStore<State> & {
   reducerManager: ReducerManager
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
