@@ -6,6 +6,7 @@ import {
 import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { AxiosInstance } from 'axios';
+import { NavigateFunction } from 'react-router-dom';
 
 export type State = {
   user: UserSliceState,
@@ -26,7 +27,8 @@ export type ReduxStoreWithReducerManager = EnhancedStore<State> & {
 }
 
 export type ThunkExtraArgs = {
-  api: AxiosInstance
+  api: AxiosInstance,
+  navigate: NavigateFunction
 }
 
 export type ThunkConfig<T> = {
