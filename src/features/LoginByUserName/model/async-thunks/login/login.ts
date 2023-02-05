@@ -1,19 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { userActions, UserData } from 'entities/User';
 import { LoginArgs } from 'features/LoginByUserName/model/types/types';
-import axios from 'axios';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 
-export const login = createAsyncThunk<UserData, LoginArgs, {rejectValue: string}>(
+export const login = createAsyncThunk<UserData, LoginArgs, ThunkConfig<string>>(
   'loginByUserName/login',
-  async (data, ThunkApi) => {
+  async (data, thunk) => {
     try {
-      const receivedData = await axios.post<UserData>('http://localhost:8000/login', data);
+      const receivedData = await thunk.extra.api.post('/login', data);
 
       const userData = receivedData.data;
-      ThunkApi.dispatch(userActions.setUserData(userData));
+      thunk.dispatch(userActions.setUserData(userData));
       return userData;
     } catch (error) {
-      return ThunkApi.rejectWithValue(error.message);
+      return thunk.rejectWithValue(error.message);
     }
   },
 );
