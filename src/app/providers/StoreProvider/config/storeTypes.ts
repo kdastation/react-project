@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
 import { createReduxStore } from 'app/providers/StoreProvider';
+import { AxiosInstance } from 'axios';
 
 export type State = {
   user: UserSliceState,
@@ -22,6 +23,15 @@ export type ReducerManager = {
 
 export type ReduxStoreWithReducerManager = EnhancedStore<State> & {
   reducerManager: ReducerManager
+}
+
+export type ThunkExtraArgs = {
+  api: AxiosInstance
+}
+
+export type ThunkConfig<T> = {
+   rejectValue: T,
+   extra: ThunkExtraArgs
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
