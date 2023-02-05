@@ -7,12 +7,17 @@ import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { AxiosInstance } from 'axios';
 import { NavigateFunction } from 'react-router-dom';
+import {
+  MODULE_NAME_EDITABLE_PROFILE_CARD,
+  EditableProfileCardSliceState,
+} from 'features/EditableProfileCard';
 
 export type State = {
   user: UserSliceState,
 
   // Асинхронные редьюсеры
-  loginByUserName?: LoginByUserNameSliceState
+  loginByUserName?: LoginByUserNameSliceState,
+  [MODULE_NAME_EDITABLE_PROFILE_CARD]?: EditableProfileCardSliceState
 }
 
 export type ReducerManager = {
