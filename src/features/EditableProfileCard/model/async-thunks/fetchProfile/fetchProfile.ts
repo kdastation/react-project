@@ -3,11 +3,11 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Profile } from 'entities/Profile';
 import { MODULE_NAME } from '../../consts/moduleName';
 
-export const fetchProfile = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfile = createAsyncThunk<Profile, { id: string | number }, ThunkConfig<string>>(
   `${MODULE_NAME}/fetchProfile`,
-  async (data, thunk) => {
+  async ({ id }, thunk) => {
     try {
-      const receivedData = await thunk.extra.api.get('/profile/1');
+      const receivedData = await thunk.extra.api.get(`/profile/${id}`);
 
       return receivedData.data;
     } catch (error: any) {

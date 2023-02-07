@@ -21,12 +21,18 @@ const initialReducers = {
   editableProfileCard: editableProfileCardReducer,
 };
 
-export const EditableProfileCard: FC = () => {
+type EditableProfileCardProps = {
+  id: string | number
+}
+
+export const EditableProfileCard: FC<EditableProfileCardProps> = ({
+  id,
+}) => {
   const dispatch = useAppDispatch();
   const form = useSelector(selectForm);
 
   useEffect(() => {
-    dispatch(fetchProfile());
+    dispatch(fetchProfile({ id }));
   }, []);
 
   const handleChangeName = (name: string) => {

@@ -4,7 +4,9 @@ import {
   fetchProfile,
 } from 'features/EditableProfileCard/model/async-thunks/fetchProfile/fetchProfile';
 import { Profile } from 'entities/Profile';
-import { updateProfile } from 'features/EditableProfileCard/model/async-thunks/updateProfile/updateProfile';
+import {
+  updateProfile,
+} from 'features/EditableProfileCard/model/async-thunks/updateProfile/updateProfile';
 import { MODULE_NAME } from '../consts/moduleName';
 
 const initialState: EditableProfileCardSliceState = {
