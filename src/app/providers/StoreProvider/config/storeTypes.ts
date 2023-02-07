@@ -17,7 +17,7 @@ export type State = {
 
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState,
-  [MODULE_NAME_EDITABLE_PROFILE_CARD]?: EditableProfileCardSliceState
+  [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState
 }
 
 export type ReducerManager = {
@@ -38,6 +38,7 @@ export type ThunkExtraArgs = {
 
 export type ThunkConfig<T> = {
    rejectValue: T,
+   state: State
    extra: ThunkExtraArgs
 }
 
