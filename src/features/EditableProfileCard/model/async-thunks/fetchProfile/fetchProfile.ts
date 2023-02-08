@@ -9,6 +9,10 @@ export const fetchProfile = createAsyncThunk<Profile, { id: string | number }, T
     try {
       const receivedData = await thunk.extra.api.get(`/profile/${id}`);
 
+      if (!receivedData.data) {
+        throw new Error('Нет данных');
+      }
+
       return receivedData.data;
     } catch (error: any) {
       return thunk.rejectWithValue(error.message);
