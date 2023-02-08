@@ -11,6 +11,10 @@ export const updateProfile = createAsyncThunk<Profile, void, ThunkConfig<string>
       const formProfile = selectForm(thunk.getState());
       const receivedData = await thunk.extra.api.put('/profile/1', formProfile);
 
+      if (!receivedData.data) {
+        throw new Error('Нет данных');
+      }
+
       return receivedData.data;
     } catch (error: any) {
       return thunk.rejectWithValue(error.message);
