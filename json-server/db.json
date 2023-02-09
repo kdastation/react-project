@@ -25,5 +25,11 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": [
+    {
+      "id": 1,
+      "name": "Kekqweqweqwesadasdasd",
+      "lastName": "Lolasdasd"
+    }
+  ]
 }
