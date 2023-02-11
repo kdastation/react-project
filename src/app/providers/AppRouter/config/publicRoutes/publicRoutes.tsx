@@ -2,6 +2,7 @@ import { IRoute, RouterPathNames } from 'shared/config/routerConfig';
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
 import { ProfilePage } from 'pages/ProfilePage/ProfilePage';
+import { ArticlePage } from 'pages/ArticlePage/ArticlePage';
 
 export const publicRoutes: IRoute[] = [
   {
@@ -15,5 +16,9 @@ export const publicRoutes: IRoute[] = [
   {
     path: RouterPathNames.PROFILE,
     element: <ProfilePage />,
+  },
+  {
+    path: `${RouterPathNames.ARTICLE}/:id`,
+    element: <ArticlePage />,
   },
 ];

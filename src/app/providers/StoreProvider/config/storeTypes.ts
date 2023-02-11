@@ -11,13 +11,15 @@ import {
   MODULE_NAME_EDITABLE_PROFILE_CARD,
   EditableProfileCardSliceState,
 } from 'features/EditableProfileCard';
+import { ArticleState, MODULE_NAME_ARTICLE } from 'entities/Article';
 
 export type State = {
   user: UserSliceState,
 
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState,
-  [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState
+  [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState,
+  [MODULE_NAME_ARTICLE]: ArticleState
 }
 
 export type ReducerManager = {
