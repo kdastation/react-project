@@ -1,36 +1,36 @@
-enum TypesArticle {
+export enum TypesArticle {
   IT = 'IT'
 }
 
-enum ArticleBlockTypes {
+export enum ArticleBlockTypes {
   CODE = 'CODE',
   TEXT = 'TEXT',
   IMAGE = 'IMAGE'
 }
 
-type ArticleBaseBlock = {
+export type ArticleBaseBlock = {
   id: string,
   type: ArticleBlockTypes
 }
 
-type ArticleCodeBlock = ArticleBaseBlock & {
+export type ArticleCodeBlock = ArticleBaseBlock & {
   type: ArticleBlockTypes.CODE,
   code: string
 }
 
-type ArticleImageBlock = ArticleBaseBlock & {
+export type ArticleImageBlock = ArticleBaseBlock & {
   type: ArticleBlockTypes.IMAGE,
   title: string,
   src: string
 }
 
-type ArticleTextBlock = ArticleBaseBlock & {
+export type ArticleTextBlock = ArticleBaseBlock & {
   type: ArticleBlockTypes.TEXT,
   title?: string,
   paragraphs: string[]
 }
 
-type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
+export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
 
 export type Article = {
   id: string,
