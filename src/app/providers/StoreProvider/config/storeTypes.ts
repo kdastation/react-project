@@ -12,6 +12,10 @@ import {
   EditableProfileCardSliceState,
 } from 'features/EditableProfileCard';
 import { ArticleState, MODULE_NAME_ARTICLE } from 'entities/Article';
+import {
+  MODULE_NAME_ARTICLE_COMMENTS,
+  ArticleCommentsState,
+} from 'entities/Comment/ArticleComments/articleComments';
 
 export type State = {
   user: UserSliceState,
@@ -19,7 +23,8 @@ export type State = {
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState,
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState,
-  [MODULE_NAME_ARTICLE]: ArticleState
+  [MODULE_NAME_ARTICLE]: ArticleState,
+  [MODULE_NAME_ARTICLE_COMMENTS]: ArticleCommentsState
 }
 
 export type ReducerManager = {

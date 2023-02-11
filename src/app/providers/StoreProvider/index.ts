@@ -1,4 +1,4 @@
-import { createReduxStore } from './config/store.';
+import { createReduxStore } from './config/store';
 import { StoreProvider } from './ui/StoreProvider';
 import { ThunkConfig } from '../StoreProvider/config/storeTypes';
 
