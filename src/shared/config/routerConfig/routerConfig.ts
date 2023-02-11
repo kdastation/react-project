@@ -1,5 +1,6 @@
 export enum RouterPathNames {
   MAIN = '/',
   ABOUT = '/about',
-  PROFILE = '/profile'
+  PROFILE = '/profile',
+  ARTICLE = '/article' // id
 }
