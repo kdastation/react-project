@@ -14,8 +14,9 @@
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "user": "1",
+      "articleId": 1,
+      "text": "okkkeeey"
     }
   ],
   "users": [

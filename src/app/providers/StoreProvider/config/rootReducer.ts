@@ -6,11 +6,16 @@ import {
   editableProfileCardReducer,
 } from 'features/EditableProfileCard/model/slice/editableProfileCardSlice';
 import { MODULE_NAME_ARTICLE, articleReducer } from 'entities/Article';
+import {
+  MODULE_NAME_ARTICLE_COMMENTS,
+  articleCommentsReducer,
+} from 'entities/Comment/ArticleComments/articleComments';
 
 export const rootReducer: ReducersMapObject<State> = {
   [MODULE_NAME_USER_SLICE]: userReducer,
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: editableProfileCardReducer,
   [MODULE_NAME_ARTICLE]: articleReducer,
+  [MODULE_NAME_ARTICLE_COMMENTS]: articleCommentsReducer,
 };
 
 export type KeysReducers = keyof ReducersMapObject<State>
