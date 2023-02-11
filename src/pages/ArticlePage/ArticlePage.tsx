@@ -1,7 +1,5 @@
 import { ArticleCard } from 'entities/Article';
-import {
-  ArticleCommentsList,
-} from 'entities/Comment/ArticleComments/articleComments/ui/ArticleCommentsList/ArticleCommentsList';
+import { ArticleCommentsList } from 'entities/Comment/ArticleComments/articleComments';
 
 export const ArticlePage = () => {
   const id = '1';
