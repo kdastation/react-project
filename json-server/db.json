@@ -35,6 +35,12 @@
       "text": "goood",
       "user": 1,
       "id": 4
+    },
+    {
+      "articleId": "1",
+      "text": "qweqwewqeqweqwe",
+      "user": 1,
+      "id": 5
     }
   ],
   "users": [

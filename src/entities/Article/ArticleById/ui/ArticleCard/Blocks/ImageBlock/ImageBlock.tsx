@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ArticleImageBlock } from '../../../../model/types/article';
+import { ArticleImageBlock } from '../../../../../model/types/article';
 
 type ImageBlockProps = {
   block: ArticleImageBlock

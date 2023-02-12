@@ -11,7 +11,10 @@ import {
   MODULE_NAME_EDITABLE_PROFILE_CARD,
   EditableProfileCardSliceState,
 } from 'features/EditableProfileCard';
-import { ArticleState, MODULE_NAME_ARTICLE } from 'entities/Article';
+import {
+  ArticleState,
+  MODULE_NAME_ARTICLE,
+} from 'entities/Article/ArticleById';
 import {
   MODULE_NAME_ARTICLE_COMMENTS,
   ArticleCommentsState,

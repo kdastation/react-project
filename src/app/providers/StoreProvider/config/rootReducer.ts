@@ -5,7 +5,10 @@ import { MODULE_NAME_EDITABLE_PROFILE_CARD } from 'features/EditableProfileCard'
 import {
   editableProfileCardReducer,
 } from 'features/EditableProfileCard/model/slice/editableProfileCardSlice';
-import { MODULE_NAME_ARTICLE, articleReducer } from 'entities/Article';
+import {
+  MODULE_NAME_ARTICLE,
+  articleReducer,
+} from 'entities/Article/ArticleById';
 import {
   MODULE_NAME_ARTICLE_COMMENTS,
   articleCommentsReducer,

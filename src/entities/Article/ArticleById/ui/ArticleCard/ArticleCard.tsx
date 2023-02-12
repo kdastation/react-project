@@ -1,12 +1,12 @@
 import { FC, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { CodeBlock } from 'entities/Article/ui/ArticleCard/Blocks/CodeBlock/CodeBlock';
-import { ImageBlock } from 'entities/Article/ui/ArticleCard/Blocks/ImageBlock/ImageBlock';
-import { TextBlock } from 'entities/Article/ui/ArticleCard/Blocks/TextBlock/TextBlock';
+import { CodeBlock } from './Blocks/CodeBlock/CodeBlock';
+import { ImageBlock } from './Blocks/ImageBlock/ImageBlock';
+import { TextBlock } from './Blocks/TextBlock/TextBlock';
 import { fetchArticle } from '../../model/async-thunks/fetchArticle/fetchArticle';
 import { selectArticle } from '../../model/selectors/selectArticle/selectArticle';
-import { ArticleBlock, ArticleBlockTypes } from '../../model/types/article';
+import { ArticleBlock, ArticleBlockTypes } from '../../../model/types/article';
 
 type ArticleCardProps = {
   id: string
