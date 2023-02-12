@@ -16,6 +16,10 @@ import {
   MODULE_NAME_ARTICLE_COMMENTS,
   ArticleCommentsState,
 } from 'entities/Comment/ArticleComments/articleComments';
+import {
+  MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
+  AddCommentForArticleState,
+} from 'features/AddComment/addCommentForArticle';
 
 export type State = {
   user: UserSliceState,
@@ -24,7 +28,8 @@ export type State = {
   loginByUserName?: LoginByUserNameSliceState,
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState,
   [MODULE_NAME_ARTICLE]: ArticleState,
-  [MODULE_NAME_ARTICLE_COMMENTS]: ArticleCommentsState
+  [MODULE_NAME_ARTICLE_COMMENTS]: ArticleCommentsState,
+  [MODULE_NAME_ADD_COMMENT_FOR_ARTICLE]: AddCommentForArticleState
 }
 
 export type ReducerManager = {
