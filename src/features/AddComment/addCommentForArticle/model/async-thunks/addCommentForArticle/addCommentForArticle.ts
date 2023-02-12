@@ -1,6 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { CommentArticle } from 'entities/Comment/ArticleComments/articleComments';
+import {
+  articleCommentsActions,
+  CommentArticle,
+} from 'entities/Comment/ArticleComments/articleComments';
 import { rootSelectorUser } from 'entities/User';
 import { MODULE_NAME } from '../../consts/moduleName';
 
@@ -21,13 +24,17 @@ export const addCommentForArticle = createAsyncThunk<
         throw new Error('Нет пользователя');
       }
 
-      const receivedData = await thunk.extra.api.post('/comments', {
+      const receivedData = await thunk.extra.api.post<CommentArticle>('/comments', {
         articleId,
         text,
         user: userId,
       });
 
-      return receivedData.data;
+      const newComment = receivedData.data;
+
+      thunk.dispatch(articleCommentsActions.addComment(newComment));
+
+      return newComment;
     } catch (error: any) {
       return thunk.rejectWithValue(error.message);
     }

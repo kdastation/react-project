@@ -23,6 +23,18 @@
       "text": "qwewqe",
       "user": 1,
       "id": 2
+    },
+    {
+      "articleId": "1",
+      "text": "okkeeyy",
+      "user": 1,
+      "id": 3
+    },
+    {
+      "articleId": "1",
+      "text": "goood",
+      "user": 1,
+      "id": 4
     }
   ],
   "users": [
