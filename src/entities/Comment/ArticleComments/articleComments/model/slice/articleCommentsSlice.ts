@@ -1,4 +1,4 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { State } from 'app/providers/StoreProvider/config/storeTypes';
 import { MODULE_NAME } from '../consts/moduleName';
 import { CommentArticle } from '../types/commentArticle';
@@ -25,7 +25,11 @@ export const articleCommentsSlice = createSlice({
     entities: {},
     error: null,
   }),
-  reducers: {},
+  reducers: {
+    addComment(state, { payload }: PayloadAction<CommentArticle>) {
+      articleCommentsAdapter.addOne(state, payload);
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchArticleComments.pending, (state) => {
       state.isLoading = true;

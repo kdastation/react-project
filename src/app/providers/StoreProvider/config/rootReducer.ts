@@ -10,12 +10,17 @@ import {
   MODULE_NAME_ARTICLE_COMMENTS,
   articleCommentsReducer,
 } from 'entities/Comment/ArticleComments/articleComments';
+import {
+  MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
+  addCommentForArticleReducer,
+} from 'features/AddComment/addCommentForArticle';
 
 export const rootReducer: ReducersMapObject<State> = {
   [MODULE_NAME_USER_SLICE]: userReducer,
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: editableProfileCardReducer,
   [MODULE_NAME_ARTICLE]: articleReducer,
   [MODULE_NAME_ARTICLE_COMMENTS]: articleCommentsReducer,
+  [MODULE_NAME_ADD_COMMENT_FOR_ARTICLE]: addCommentForArticleReducer,
 };
 
 export type KeysReducers = keyof ReducersMapObject<State>

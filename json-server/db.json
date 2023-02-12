@@ -17,6 +17,24 @@
       "user": "1",
       "articleId": 1,
       "text": "okkkeeey"
+    },
+    {
+      "articleId": "1",
+      "text": "qwewqe",
+      "user": 1,
+      "id": 2
+    },
+    {
+      "articleId": "1",
+      "text": "okkeeyy",
+      "user": 1,
+      "id": 3
+    },
+    {
+      "articleId": "1",
+      "text": "goood",
+      "user": 1,
+      "id": 4
     }
   ],
   "users": [
@@ -42,7 +60,9 @@
       "views": 1022,
       "createdAt": "26.04.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",

@@ -1,5 +1,6 @@
 import { ArticleCard } from 'entities/Article';
 import { ArticleCommentsList } from 'entities/Comment/ArticleComments/articleComments';
+import { AddCommentForArticle } from 'features/AddComment/addCommentForArticle';
 
 export const ArticlePage = () => {
   const id = '1';
@@ -8,6 +9,9 @@ export const ArticlePage = () => {
     <div>
       <ArticleCard
         id={id}
+      />
+      <AddCommentForArticle
+        articleId={id}
       />
       <ArticleCommentsList
         articleId={id}
