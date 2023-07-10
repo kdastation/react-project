@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchArticle } from 'entities/Article/model/async-thunks/fetchArticle/fetchArticle';
+import { fetchArticle } from '../async-thunks/fetchArticle/fetchArticle';
 import { MODULE_NAME } from '../consts/moduleName';
 import { ArticleState } from '../types/state';
 

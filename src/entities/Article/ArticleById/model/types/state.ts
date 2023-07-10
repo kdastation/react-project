@@ -1,4 +1,4 @@
-import { Article } from './article';
+import { Article } from '../../../model/types/article';
 
 export type ArticleState = {
   isLoading: boolean,

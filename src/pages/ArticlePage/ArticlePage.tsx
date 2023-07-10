@@ -1,4 +1,4 @@
-import { ArticleCard } from 'entities/Article';
+import { ArticleCard } from 'entities/Article/ArticleById';
 import { ArticleCommentsList } from 'entities/Comment/ArticleComments/articleComments';
 import { AddCommentForArticle } from 'features/AddComment/addCommentForArticle';
 

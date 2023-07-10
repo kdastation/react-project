@@ -11,7 +11,10 @@ import {
   MODULE_NAME_EDITABLE_PROFILE_CARD,
   EditableProfileCardSliceState,
 } from 'features/EditableProfileCard';
-import { ArticleState, MODULE_NAME_ARTICLE } from 'entities/Article';
+import {
+  ArticleState,
+  MODULE_NAME_ARTICLE,
+} from 'entities/Article/ArticleById';
 import {
   MODULE_NAME_ARTICLE_COMMENTS,
   ArticleCommentsState,
@@ -20,6 +23,10 @@ import {
   MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
   AddCommentForArticleState,
 } from 'features/AddComment/addCommentForArticle';
+import {
+  ArticlesState,
+  MODULE_NAME_ARTICLES,
+} from 'entities/Article/Articles';
 
 export type State = {
   user: UserSliceState,
@@ -29,7 +36,8 @@ export type State = {
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState,
   [MODULE_NAME_ARTICLE]: ArticleState,
   [MODULE_NAME_ARTICLE_COMMENTS]: ArticleCommentsState,
-  [MODULE_NAME_ADD_COMMENT_FOR_ARTICLE]: AddCommentForArticleState
+  [MODULE_NAME_ADD_COMMENT_FOR_ARTICLE]: AddCommentForArticleState,
+  [MODULE_NAME_ARTICLES]: ArticlesState
 }
 
 export type ReducerManager = {

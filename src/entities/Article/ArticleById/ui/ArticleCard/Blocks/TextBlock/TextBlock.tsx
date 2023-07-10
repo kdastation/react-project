@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ArticleTextBlock } from '../../../../model/types/article';
+import { ArticleTextBlock } from '../../../../../model/types/article';
 
 type TextBlockProps = {
   block: ArticleTextBlock
