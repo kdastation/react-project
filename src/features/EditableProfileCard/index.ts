@@ -1,4 +1,4 @@
-import { EditableProfileCardSliceState } from './model/types/types';
+import type { EditableProfileCardSliceState } from './model/types/types';
 import { MODULE_NAME } from './model/consts/moduleName';
 import { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 

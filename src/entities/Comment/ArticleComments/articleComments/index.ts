@@ -2,10 +2,10 @@ import {
   articleCommentsReducer,
   articleCommentsActions,
 } from './model/slice/articleCommentsSlice';
-import { ArticleCommentsState } from './model/types/articleCommentsState';
+import type { ArticleCommentsState } from './model/types/articleCommentsState';
 import { MODULE_NAME } from './model/consts/moduleName';
 import { ArticleCommentsList } from './ui/ArticleCommentsList/ArticleCommentsList';
-import { CommentArticle } from './model/types/commentArticle';
+import type { CommentArticle } from './model/types/commentArticle';
 
 export {
   articleCommentsReducer,

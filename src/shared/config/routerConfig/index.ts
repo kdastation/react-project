@@ -1,4 +1,2 @@
-import { IRoute } from './routerConfigTypes';
-import { RouterPathNames } from './routerConfig';
-
-export { IRoute, RouterPathNames };
+export { RouterPathNames } from 'shared/config/routerConfig/consts/consts';
+export type { IRoute } from './routerConfigTypes';
