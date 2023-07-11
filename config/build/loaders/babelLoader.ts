@@ -4,7 +4,7 @@ type BabelLoader = {
   isTsx: boolean
 } & BuildOptions
 
-export const babelLoader = ({ isTsx }: BabelLoader) => ({
+export const babelLoader = ({ isTsx, isDev }: BabelLoader) => ({
   test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
   exclude: /node_modules/,
   use: {
@@ -14,7 +14,8 @@ export const babelLoader = ({ isTsx }: BabelLoader) => ({
       plugins: [
         ['@babel/plugin-transform-typescript', { isTsx }],
         '@babel/plugin-transform-runtime',
-      ],
+        isDev && require.resolve('react-refresh/babel'),
+      ].filter(Boolean),
     },
   },
 });
