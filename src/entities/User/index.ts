@@ -1,11 +1,12 @@
 export {
   userReducer,
   userActions,
+  MODULE_NAME_USER_SLICE,
 } from './model/slice/userSlice';
-export {
+
+export type {
   UserData,
   UserSliceState,
-  MODULE_NAME_USER_SLICE,
 } from './model/types/userTypes';
 
 export { rootSelectorUser } from './model/selectors/rootSelectorUser';

@@ -1,5 +1,1 @@
-import { Article } from './model/types/article';
-
-export {
-  Article,
-};
+export type { Article } from './model/types/article';

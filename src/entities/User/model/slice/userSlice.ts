@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { MODULE_NAME_USER_SLICE, UserData, UserSliceState } from '../types/userTypes';
+import { UserData, UserSliceState } from '../types/userTypes';
+
+export const MODULE_NAME_USER_SLICE = 'user';
 
 const initialState: UserSliceState = {
   userData: null,

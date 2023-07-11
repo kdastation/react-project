@@ -4,9 +4,10 @@ import {
 } from '@reduxjs/toolkit';
 import { login } from 'features/LoginByUserName/model/async-thunks/login/login';
 import {
-  LOGIN_BY_USER_NAME_SLICE_MODULE_NAME,
   LoginByUserNameSliceState,
 } from '../types/types';
+
+export const LOGIN_BY_USER_NAME_SLICE_MODULE_NAME = 'loginByUserName';
 
 export const initialState: LoginByUserNameSliceState = {
   username: '',
