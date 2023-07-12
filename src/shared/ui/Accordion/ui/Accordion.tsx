@@ -5,21 +5,21 @@ export type AccordionProps = {
   openedItems: string[];
   onChange: (openedItems: string[]) => void;
   children: ReactNode;
-  mode?: "default" | "multiple";
+  mode?: "single" | "multiple";
 };
 
 export const Accordion: FC<AccordionProps> = ({
   openedItems,
   onChange,
   children,
-  mode = "default",
+  mode = "multiple",
 }) => {
   const openedItemsSet = useMemo(() => new Set(openedItems), [openedItems]);
 
   const handleChange = (name: string) => {
     const isItemOpened = openedItemsSet.has(name);
 
-    if (mode === "default") {
+    if (mode === "multiple") {
       const newOpenedItems = isItemOpened
         ? openedItems.filter((item) => item !== name)
         : [...openedItems, name];

@@ -71,8 +71,8 @@ describe("Accordion", () => {
     expect(screen.queryByText("A Content")).toBeNull();
   });
 
-  it("should correct work in multiple mode", async () => {
-    render(<TestApp initialOpened={["a"]} mode="multiple" />);
+  it("should correct work in single mode", async () => {
+    render(<TestApp initialOpened={["a"]} mode="single" />);
 
     const bTrigger = screen.getByText("B Trigger");
 
