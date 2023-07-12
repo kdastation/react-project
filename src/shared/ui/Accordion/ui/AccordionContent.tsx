@@ -1,12 +1,22 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import { useAccordionItemProps } from "@/shared/ui/Accordion/ui/AccordionItemContext";
+import { DivProps } from "@/shared/types/DivProps";
 
-export const AccordionContent: FC = ({ children }) => {
+type AccordionContentProps = DivProps;
+
+export const AccordionContent = forwardRef<
+  HTMLDivElement,
+  AccordionContentProps
+>(({ children, ref, ...props }) => {
   const { isOpen } = useAccordionItemProps();
 
   if (!isOpen) {
     return null;
   }
 
-  return <div>{children}</div>;
-};
+  return (
+    <div {...props} ref={ref}>
+      {children}
+    </div>
+  );
+});

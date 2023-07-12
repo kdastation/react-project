@@ -22,7 +22,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ name, children }) => {
 
   return (
     <AccordionItemContext.Provider value={values}>
-      <div>{children}</div>
+      {children}
     </AccordionItemContext.Provider>
   );
 };

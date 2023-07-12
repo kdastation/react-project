@@ -1,8 +1,20 @@
-import { FC } from "react";
+import { forwardRef, ReactNode } from "react";
 import { useAccordionItemProps } from "./AccordionItemContext";
+import { ButtonProps } from "@/shared/types/ButtonProps";
 
-export const AccordionButton: FC = ({ children }) => {
+type AccordionButtonProps = {
+  children?: ReactNode;
+} & ButtonProps;
+
+export const AccordionButton = forwardRef<
+  HTMLButtonElement,
+  AccordionButtonProps
+>(({ children, ref, type = "button", ...props }) => {
   const { onChange } = useAccordionItemProps();
 
-  return <button onClick={onChange}>{children}</button>;
-};
+  return (
+    <button type={type} onClick={onChange} {...props} ref={ref}>
+      {children}
+    </button>
+  );
+});
