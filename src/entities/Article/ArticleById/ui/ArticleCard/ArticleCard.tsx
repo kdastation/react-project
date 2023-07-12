@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { CodeBlock } from './Blocks/CodeBlock/CodeBlock';
 import { ImageBlock } from './Blocks/ImageBlock/ImageBlock';
 import { TextBlock } from './Blocks/TextBlock/TextBlock';

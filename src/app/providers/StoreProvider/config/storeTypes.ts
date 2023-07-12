@@ -1,12 +1,12 @@
-import { UserSliceState } from '@/entities/User';
-import { LoginByUserNameSliceState } from '@/features/LoginByUserName/index';
 import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { KeysReducers } from '@/app/providers/StoreProvider/config/rootReducer';
-import { createReduxStore } from '@/app/providers/StoreProvider';
 import { AxiosInstance } from 'axios';
 import { NavigateFunction } from 'react-router-dom';
+import { UserSliceState } from '@/entities/User';
+import { LoginByUserNameSliceState } from '@/features/LoginByUserName/index';
+import { KeysReducers } from '@/app/providers/StoreProvider/config/rootReducer';
+import { createReduxStore } from '@/app/providers/StoreProvider';
 import {
   MODULE_NAME_EDITABLE_PROFILE_CARD,
   EditableProfileCardSliceState,

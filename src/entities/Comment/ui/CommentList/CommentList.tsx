@@ -1,5 +1,5 @@
-import { Comment } from '@/entities/Comment/model/types/comment';
 import { FC } from 'react';
+import { Comment } from '@/entities/Comment/model/types/comment';
 import { CommentCard } from '@/entities/Comment/ui/CommentCard/CommentCard';
 
 type CommentListProps = {

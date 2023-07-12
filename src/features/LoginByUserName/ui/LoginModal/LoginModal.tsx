@@ -1,5 +1,5 @@
-import { Modal } from '@/shared/ui/Modal';
 import { FC } from 'react';
+import { Modal } from '@/shared/ui/Modal';
 import { LoginForm } from '@/features/LoginByUserName/ui/LoginForm/LoginForm';
 
 type LoginModalProps = {

@@ -1,6 +1,6 @@
+import { Story } from '@storybook/react';
 import { State } from '@/app/providers/StoreProvider/config/storeTypes';
 import { StoreProvider } from '@/app/providers/StoreProvider';
-import { Story } from '@storybook/react';
 import { loginByUserNameReducer } from '@/features/LoginByUserName';
 import { ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
 
