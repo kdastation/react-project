@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, useMemo } from "react";
 import { AccordionContext } from "./AccordionContext";
+import { warnings } from "@/shared/ui/Accordion/consts/warnings";
 
 export type AccordionProps = {
   openedItems: string[];
@@ -14,7 +15,14 @@ export const Accordion: FC<AccordionProps> = ({
   children,
   mode = "multiple",
 }) => {
-  const openedItemsSet = useMemo(() => new Set(openedItems), [openedItems]);
+  const openedItemsSet = useMemo(() => {
+    if (mode === "multiple" && openedItems.length > 1) {
+      console.warn(warnings.multipleOpenedItems);
+      return new Set(openedItems.slice(0, 1));
+    }
+
+    return new Set(openedItems);
+  }, [openedItems]);
 
   const handleChange = (name: string) => {
     const isItemOpened = openedItemsSet.has(name);
