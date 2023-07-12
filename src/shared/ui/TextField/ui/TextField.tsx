@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, InputHTMLAttributes } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './TextField.module.scss';
 
 type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>,

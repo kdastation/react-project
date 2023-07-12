@@ -1,17 +1,17 @@
 import { FC, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { DynamicModuleLoader } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { DynamicModuleLoader } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
   editableProfileCardActions,
   editableProfileCardReducer,
-} from 'features/EditableProfileCard/model/slice/editableProfileCardSlice';
-import { useSelector } from 'react-redux';
-import { selectForm } from 'features/EditableProfileCard/model/selectors/selectForm/selectForm';
-import { ProfileCard } from 'entities/Profile';
-import { Button } from 'shared/ui/Button';
+} from '@/features/EditableProfileCard/model/slice/editableProfileCardSlice';
+import { selectForm } from '@/features/EditableProfileCard/model/selectors/selectForm/selectForm';
+import { ProfileCard } from '@/entities/Profile';
+import { Button } from '@/shared/ui/Button';
 import {
   updateProfile,
-} from 'features/EditableProfileCard/model/async-thunks/updateProfile/updateProfile';
+} from '@/features/EditableProfileCard/model/async-thunks/updateProfile/updateProfile';
 import {
   fetchProfile,
 } from '../../model/async-thunks/fetchProfile/fetchProfile';

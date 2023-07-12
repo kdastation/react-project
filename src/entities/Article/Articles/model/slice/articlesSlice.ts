@@ -1,7 +1,7 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { Article } from 'entities/Article';
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
-import { fetchArticles } from 'entities/Article/Articles/model/async-thunks/fetchArticles';
+import { Article } from '@/entities/Article';
+import { State } from '@/app/providers/StoreProvider/config/storeTypes';
+import { fetchArticles } from '@/entities/Article/Articles/model/async-thunks/fetchArticles';
 import { MODULE_NAME } from '../consts/moduleName';
 import { ArticlesState } from '../types/state';
 

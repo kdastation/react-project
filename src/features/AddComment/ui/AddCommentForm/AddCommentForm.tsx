@@ -1,6 +1,6 @@
 import { FC, FormEvent, useState } from 'react';
-import { Button } from 'shared/ui/Button';
-import { TextField } from 'shared/ui/TextField';
+import { Button } from '@/shared/ui/Button';
+import { TextField } from '@/shared/ui/TextField';
 
 type AddCommentFormProps = {
   onSubmit: (text: string) => void

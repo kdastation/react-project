@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
-import ThemeIcon from 'shared/assets/icons/theme.svg';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {

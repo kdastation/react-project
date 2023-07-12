@@ -1,8 +1,8 @@
 import {
   AnyAction, combineReducers, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ReducerManager, State } from 'app/providers/StoreProvider/config/storeTypes';
-import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
+import { ReducerManager, State } from '@/app/providers/StoreProvider/config/storeTypes';
+import { KeysReducers } from '@/app/providers/StoreProvider/config/rootReducer';
 
 export function createReducerManager(initialReducers: ReducersMapObject<State>): ReducerManager {
   // Create an object which maps keys to reducers

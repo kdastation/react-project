@@ -1,6 +1,6 @@
 import { AsyncThunkAction, Dispatch } from '@reduxjs/toolkit';
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
 import axios, { AxiosInstance } from 'axios';
+import { State } from '@/app/providers/StoreProvider/config/storeTypes';
 
 type ActionCreator<Return, Args, RejectedValue> =
     (args: Args) => AsyncThunkAction<Return, Args, { rejectValue: RejectedValue }>

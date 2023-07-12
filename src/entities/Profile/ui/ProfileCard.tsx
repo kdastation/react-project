@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { TextField } from 'shared/ui/TextField';
+import { TextField } from '@/shared/ui/TextField';
 import { Profile } from '../model/types/profile';
 
 type ProfileCardProps = {

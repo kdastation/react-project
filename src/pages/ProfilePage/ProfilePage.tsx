@@ -1,4 +1,4 @@
-import { EditableProfileCard } from 'features/EditableProfileCard';
+import { EditableProfileCard } from '@/features/EditableProfileCard';
 
 export const ProfilePage = () => {
   const id = 1;

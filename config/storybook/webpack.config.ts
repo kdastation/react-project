@@ -29,6 +29,11 @@ export default ({ config }: {config: webpack.Configuration}) => {
   });
   config!.module!.rules!.push(svgLoaders());
   config!.module!.rules!.push(cssLoader(true));
+  config!.resolve!.alias = {
+    ...config!.resolve!.alias,
+    '@': paths.src,
+  };
+
   config!.plugins!.push(new MiniCssExtractPlugin({
     filename: 'css/[name].[contenthash:8].css',
     chunkFilename: 'css/[name].[contenthash:8].css',

@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { Button } from 'shared/ui/Button';
-import { LoginModal } from 'features/LoginByUserName';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
+import { LoginModal } from '@/features/LoginByUserName';
+import { Button } from '@/shared/ui/Button';
 import styles from './Header.module.scss';
 
 interface HeaderProps {

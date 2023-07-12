@@ -1,11 +1,11 @@
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
   fetchArticles,
   rootSelectorArticles,
   ArticleItem,
-} from 'entities/Article/Articles';
-import { useSelector } from 'react-redux';
+} from '@/entities/Article/Articles';
 
 export const ArticlesWithFilters = () => {
   const dispatch = useAppDispatch();

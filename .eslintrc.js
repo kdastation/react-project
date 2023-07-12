@@ -42,5 +42,6 @@ module.exports = {
     'react/jsx-no-useless-fragment': 0,
     'no-param-reassign': ['error', { props: false }],
     'no-undef': 'off',
+    'react/jsx-closing-tag-location': 0,
   },
 };

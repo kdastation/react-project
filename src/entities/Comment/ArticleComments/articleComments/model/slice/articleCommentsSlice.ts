@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
+import { State } from '@/app/providers/StoreProvider/config/storeTypes';
 import { MODULE_NAME } from '../consts/moduleName';
 import { CommentArticle } from '../types/commentArticle';
 import { ArticleCommentsState } from '../types/articleCommentsState';

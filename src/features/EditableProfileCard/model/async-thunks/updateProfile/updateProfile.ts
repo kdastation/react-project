@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Profile } from 'entities/Profile';
-import { selectForm } from 'features/EditableProfileCard/model/selectors/selectForm/selectForm';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { Profile } from '@/entities/Profile';
+import { selectForm } from '@/features/EditableProfileCard/model/selectors/selectForm/selectForm';
 import { MODULE_NAME } from '../../consts/moduleName';
 
 export const updateProfile = createAsyncThunk<Profile, void, ThunkConfig<string>>(

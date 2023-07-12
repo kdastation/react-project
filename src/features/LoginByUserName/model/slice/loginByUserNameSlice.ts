@@ -2,7 +2,7 @@ import {
   createSlice,
   PayloadAction,
 } from '@reduxjs/toolkit';
-import { login } from 'features/LoginByUserName/model/async-thunks/login/login';
+import { login } from '@/features/LoginByUserName/model/async-thunks/login/login';
 import {
   LoginByUserNameSliceState,
 } from '../types/types';

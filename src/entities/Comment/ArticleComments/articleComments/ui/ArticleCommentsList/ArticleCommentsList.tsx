@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { CommentList } from '@/entities/Comment';
 import {
   fetchArticleComments,
 } from '../../model/async-thunks/fetchArticleComments/fetchArticleComments';
