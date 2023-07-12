@@ -12,6 +12,7 @@ export const AccordionButton = forwardRef<
 >(({ children, ref, type = "button", ...props }) => {
   const { onChange } = useAccordionItemProps();
 
+  // TODO: добавить mergeCallbacks
   return (
     <button type={type} onClick={onChange} {...props} ref={ref}>
       {children}
