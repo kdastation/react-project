@@ -16,8 +16,8 @@ export const Accordion: FC<AccordionProps> = ({
   mode = "multiple",
 }) => {
   const openedItemsSet = useMemo(() => {
-    if (mode === "multiple" && openedItems.length > 1) {
-      console.warn(warnings.multipleOpenedItems);
+    if (mode === "single" && openedItems.length > 1) {
+      console.warn(warnings.singleOpenedItems);
       return new Set(openedItems.slice(0, 1));
     }
 

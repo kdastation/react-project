@@ -7,6 +7,7 @@ import {
   AccordionContent,
   AccordionItem,
 } from "@/shared/ui/Accordion";
+import { warnings } from "../consts/warnings";
 
 type InitialAppProps = {
   initialOpened?: string[];
@@ -80,5 +81,12 @@ describe("Accordion", () => {
 
     expect(screen.getByText("B Content")).toBeInTheDocument();
     expect(screen.queryByText("A Content")).toBeNull();
+  });
+
+  it("should warn about multiple items", () => {
+    const logWarnSpy = jest.spyOn(console, "warn");
+    render(<TestApp initialOpened={["a", "b"]} mode="single" />);
+
+    expect(logWarnSpy).toHaveBeenCalledWith(warnings.singleOpenedItems);
   });
 });

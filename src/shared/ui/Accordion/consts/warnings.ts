@@ -1,4 +1,4 @@
 export const warnings = {
-  multipleOpenedItems:
+  singleOpenedItems:
     "<Accordion /> can only accept 1 opened item in multiple mode",
 };
