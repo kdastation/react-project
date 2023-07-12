@@ -33,8 +33,10 @@ export const Accordion: FC<AccordionProps> = ({
     onChange?.(newOpenedItems);
   };
 
+  // TODO: Добавить useMemo (сделать функцию на реф келбек)
   return (
     <AccordionContext.Provider
+      /* eslint-disable-next-line react/jsx-no-constructed-context-values */
       value={{ openedItems: openedItemsSet, onChange: handleChange }}
     >
       {children}
