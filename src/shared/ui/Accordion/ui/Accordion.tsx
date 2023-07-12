@@ -1,11 +1,11 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, ReactNode, useMemo } from "react";
 import { AccordionContext } from "./AccordionContext";
 
-type AccordionProps = {
+export type AccordionProps = {
   openedItems: string[];
   onChange: (openedItems: string[]) => void;
-  children: React.ReactElement[];
-  mode?: "default";
+  children: ReactNode;
+  mode?: "default" | "multiple";
 };
 
 export const Accordion: FC<AccordionProps> = ({
@@ -25,7 +25,12 @@ export const Accordion: FC<AccordionProps> = ({
         : [...openedItems, name];
 
       onChange?.(newOpenedItems);
+      return;
     }
+
+    const newOpenedItems = isItemOpened ? [] : [name];
+
+    onChange?.(newOpenedItems);
   };
 
   return (
