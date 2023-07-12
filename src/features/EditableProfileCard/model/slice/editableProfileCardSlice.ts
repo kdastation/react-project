@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { EditableProfileCardSliceState } from 'features/EditableProfileCard/model/types/types';
+import { EditableProfileCardSliceState } from '@/features/EditableProfileCard/model/types/types';
 import {
   fetchProfile,
-} from 'features/EditableProfileCard/model/async-thunks/fetchProfile/fetchProfile';
-import { Profile } from 'entities/Profile';
+} from '@/features/EditableProfileCard/model/async-thunks/fetchProfile/fetchProfile';
+import { Profile } from '@/entities/Profile';
 import {
   updateProfile,
-} from 'features/EditableProfileCard/model/async-thunks/updateProfile/updateProfile';
+} from '@/features/EditableProfileCard/model/async-thunks/updateProfile/updateProfile';
 import { MODULE_NAME } from '../consts/moduleName';
 
 const initialState: EditableProfileCardSliceState = {

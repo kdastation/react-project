@@ -1,4 +1,4 @@
-import { Article } from 'entities/Article';
+import { Article } from '@/entities/Article';
 import { FC } from 'react';
 
 type ArticleItemProps = {

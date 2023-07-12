@@ -1,4 +1,4 @@
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
+import { State } from '@/app/providers/StoreProvider/config/storeTypes';
 
 export const selectForm = (
   { editableProfileCard }: State,

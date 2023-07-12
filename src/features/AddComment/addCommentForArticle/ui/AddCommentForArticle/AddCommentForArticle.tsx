@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { AddCommentForm } from 'features/AddComment';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { AddCommentForm } from '@/features/AddComment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
   addCommentForArticle,
 } from '../../model/async-thunks/addCommentForArticle/addCommentForArticle';

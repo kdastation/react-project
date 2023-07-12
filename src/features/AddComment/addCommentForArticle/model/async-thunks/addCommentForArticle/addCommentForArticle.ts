@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import {
   articleCommentsActions,
   CommentArticle,
-} from 'entities/Comment/ArticleComments/articleComments';
-import { rootSelectorUser } from 'entities/User';
+} from '@/entities/Comment/ArticleComments/articleComments';
+import { rootSelectorUser } from '@/entities/User';
 import { MODULE_NAME } from '../../consts/moduleName';
 
 export const addCommentForArticle = createAsyncThunk<

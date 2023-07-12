@@ -1,32 +1,32 @@
-import { UserSliceState } from 'entities/User';
-import { LoginByUserNameSliceState } from 'features/LoginByUserName/index';
+import { UserSliceState } from '@/entities/User';
+import { LoginByUserNameSliceState } from '@/features/LoginByUserName/index';
 import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
-import { createReduxStore } from 'app/providers/StoreProvider';
+import { KeysReducers } from '@/app/providers/StoreProvider/config/rootReducer';
+import { createReduxStore } from '@/app/providers/StoreProvider';
 import { AxiosInstance } from 'axios';
 import { NavigateFunction } from 'react-router-dom';
 import {
   MODULE_NAME_EDITABLE_PROFILE_CARD,
   EditableProfileCardSliceState,
-} from 'features/EditableProfileCard';
+} from '@/features/EditableProfileCard';
 import {
   ArticleState,
   MODULE_NAME_ARTICLE,
-} from 'entities/Article/ArticleById';
+} from '@/entities/Article/ArticleById';
 import {
   MODULE_NAME_ARTICLE_COMMENTS,
   ArticleCommentsState,
-} from 'entities/Comment/ArticleComments/articleComments';
+} from '@/entities/Comment/ArticleComments/articleComments';
 import {
   MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
   AddCommentForArticleState,
-} from 'features/AddComment/addCommentForArticle';
+} from '@/features/AddComment/addCommentForArticle';
 import {
   ArticlesState,
   MODULE_NAME_ARTICLES,
-} from 'entities/Article/Articles';
+} from '@/entities/Article/Articles';
 
 export type State = {
   user: UserSliceState,

@@ -1,12 +1,12 @@
 import React from 'react';
 import {
   ThemeDecorator,
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {
   ComponentMeta,
   ComponentStory,
 } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
 import { Modal } from './Modal';
 
 export default {

@@ -1,8 +1,8 @@
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { State } from '@/app/providers/StoreProvider/config/storeTypes';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Story } from '@storybook/react';
-import { loginByUserNameReducer } from 'features/LoginByUserName';
-import { ReducersList } from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { loginByUserNameReducer } from '@/features/LoginByUserName';
+import { ReducersList } from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducersList = {
   loginByUserName: loginByUserNameReducer,

@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { CommentList } from 'entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { CommentList } from '@/entities/Comment';
 import { useSelector } from 'react-redux';
 import {
   fetchArticleComments,

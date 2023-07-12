@@ -1,5 +1,5 @@
 import { DeepPartial } from '@reduxjs/toolkit';
-import { State } from 'app/providers/StoreProvider/config/storeTypes';
+import { State } from '@/app/providers/StoreProvider/config/storeTypes';
 import { selectFullState } from './selectFullState';
 import { LoginByUserNameSliceState } from '../../types/types';
 import { initialState } from '../../slice/loginByUserNameSlice';

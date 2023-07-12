@@ -1,13 +1,13 @@
-import { Button } from 'shared/ui/Button';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
-import { TextField } from 'shared/ui/TextField';
-import { login } from 'features/LoginByUserName/model/async-thunks/login/login';
+import { TextField } from '@/shared/ui/TextField';
+import { login } from '@/features/LoginByUserName/model/async-thunks/login/login';
 import {
   DynamicModuleLoader,
   ReducersList,
-} from 'shared/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+} from '@/shared/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { FC } from 'react';
 import { rootSelectorLoginByUserName } from '../../model/selectors/root';
 import {

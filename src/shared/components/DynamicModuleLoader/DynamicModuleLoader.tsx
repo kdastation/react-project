@@ -1,7 +1,7 @@
 import { useDispatch, useStore } from 'react-redux';
-import { ReduxStoreWithReducerManager } from 'app/providers/StoreProvider/config/storeTypes';
+import { ReduxStoreWithReducerManager } from '@/app/providers/StoreProvider/config/storeTypes';
 import { FC, useEffect } from 'react';
-import { KeysReducers } from 'app/providers/StoreProvider/config/rootReducer';
+import { KeysReducers } from '@/app/providers/StoreProvider/config/rootReducer';
 import { Reducer } from '@reduxjs/toolkit';
 
 export type ReducersList = {

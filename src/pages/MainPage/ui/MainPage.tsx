@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticlesWithFilters } from 'widgets/ArticlesWithFilters';
+import { ArticlesWithFilters } from '@/widgets/ArticlesWithFilters';
 
 const MainPage = () => (
   <div>

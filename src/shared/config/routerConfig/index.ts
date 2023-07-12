@@ -1,2 +1,2 @@
-export { RouterPathNames } from 'shared/config/routerConfig/consts/consts';
+export { RouterPathNames } from './consts/consts';
 export type { IRoute } from './routerConfigTypes';

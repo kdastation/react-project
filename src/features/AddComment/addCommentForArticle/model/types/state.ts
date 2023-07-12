@@ -1,4 +1,4 @@
-import { CommentArticle } from 'entities/Comment/ArticleComments/articleComments';
+import { CommentArticle } from '@/entities/Comment/ArticleComments/articleComments';
 
 export type AddCommentForArticleState = {
   isLoading: boolean,

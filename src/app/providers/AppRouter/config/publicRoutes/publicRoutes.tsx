@@ -1,8 +1,8 @@
-import { IRoute, RouterPathNames } from 'shared/config/routerConfig';
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
-import { ProfilePage } from 'pages/ProfilePage/ProfilePage';
-import { ArticlePage } from 'pages/ArticlePage/ArticlePage';
+import { IRoute, RouterPathNames } from '@/shared/config/routerConfig';
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { ProfilePage } from '@/pages/ProfilePage/ProfilePage';
+import { ArticlePage } from '@/pages/ArticlePage/ArticlePage';
 
 export const publicRoutes: IRoute[] = [
   {

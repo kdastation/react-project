@@ -1,8 +1,8 @@
 import {
   CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { createReducerManager } from 'app/providers/StoreProvider/lib/createReducerManager';
-import { api } from 'shared/api/api';
+import { createReducerManager } from '@/app/providers/StoreProvider/lib/createReducerManager';
+import { api } from '@/shared/api/api';
 import { NavigateFunction } from 'react-router-dom';
 import { State, ThunkExtraArgs } from './storeTypes';
 import { rootReducer } from './rootReducer';

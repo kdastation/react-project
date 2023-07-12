@@ -1,6 +1,6 @@
-import { Modal } from 'shared/ui/Modal';
+import { Modal } from '@/shared/ui/Modal';
 import { FC } from 'react';
-import { LoginForm } from 'features/LoginByUserName/ui/LoginForm/LoginForm';
+import { LoginForm } from '@/features/LoginByUserName/ui/LoginForm/LoginForm';
 
 type LoginModalProps = {
     isOpen: boolean,
