@@ -1,6 +1,7 @@
 import { forwardRef, ReactNode } from "react";
 import { useAccordionItemProps } from "./AccordionItemContext";
 import { ButtonProps } from "@/shared/types/ButtonProps";
+import { callAllHandlers } from "@/shared/lib/callAllHandlers/callAllHandlers";
 
 type AccordionButtonProps = {
   children?: ReactNode;
@@ -12,9 +13,13 @@ export const AccordionButton = forwardRef<
 >(({ children, ref, type = "button", ...props }) => {
   const { onChange } = useAccordionItemProps();
 
-  // TODO: добавить mergeCallbacks
   return (
-    <button type={type} onClick={onChange} {...props} ref={ref}>
+    <button
+      type={type}
+      onClick={callAllHandlers(onChange, props.onClick)}
+      {...props}
+      ref={ref}
+    >
       {children}
     </button>
   );
