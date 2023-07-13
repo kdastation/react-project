@@ -1,23 +1,22 @@
-import { FC, HTMLAttributes, DetailedHTMLProps } from 'react';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import styles from './Flex.module.scss';
+import { FC } from "react";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+import styles from "./Flex.module.scss";
+import { DivProps } from "@/shared/types/DivProps";
 
-export type FlexJustify = 'start' | 'center' | 'end' | 'between';
-export type FlexAlign = 'start' | 'center' | 'end';
-export type FlexDirection = 'row' | 'column';
-export type FlexWrap = 'nowrap' | 'wrap';
-export type FlexGap = '4' | '8' | '16' | '24' | '32';
-
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+export type FlexJustify = "start" | "center" | "end" | "between";
+export type FlexAlign = "start" | "center" | "end";
+export type FlexDirection = "row" | "column";
+export type FlexWrap = "nowrap" | "wrap";
+export type FlexGap = "4" | "8" | "16" | "24" | "32";
 
 export type FlexProps = {
-  align: FlexAlign,
-  justify: FlexJustify,
-  direction: FlexDirection,
-  wrap: FlexWrap,
-  gap?: FlexGap,
-  max?: boolean
-} & DivProps
+  align: FlexAlign;
+  justify: FlexJustify;
+  direction: FlexDirection;
+  wrap: FlexWrap;
+  gap?: FlexGap;
+  max?: boolean;
+} & DivProps;
 
 const alignClasses: Record<FlexAlign, string> = {
   start: styles.align_start,
@@ -52,10 +51,10 @@ const gapClasses: Record<FlexGap, string> = {
 
 export const Flex: FC<FlexProps> = ({
   gap,
-  wrap = 'nowrap',
-  direction = 'row',
-  justify = 'start',
-  align = 'start',
+  wrap = "nowrap",
+  direction = "row",
+  justify = "start",
+  align = "start",
   max = false,
   children,
   ...otherProps
