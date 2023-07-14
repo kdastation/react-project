@@ -1,5 +1,6 @@
 import React from "react";
-import { ArticlesWithFilters } from "@/widgets/ArticlesWithFilters";
+import { ArticlesList } from "@/features/ArticlesList";
+import { FiltersArticles } from "@/features/FiltersArticles";
 
 const MainPage = () => {
   const a = 1;
@@ -7,7 +8,8 @@ const MainPage = () => {
   return (
     <div>
       <div>MAin PAge</div>
-      <ArticlesWithFilters />
+      <FiltersArticles />
+      <ArticlesList />
     </div>
   );
 };
