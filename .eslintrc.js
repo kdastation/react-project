@@ -15,10 +15,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {
-    "react/jsx-filename-extension": [
-      1,
-      { extensions: [".js", ".jsx", ".tsx"] },
-    ],
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".tsx"] }],
     "import/no-unresolved": 0,
     "react/react-in-jsx-scope": 0,
     "import/prefer-default-export": 0,
@@ -29,7 +26,7 @@ module.exports = {
     "no-shadow": 0,
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 1,
-    "max-len": ["error", { ignoreComments: true, code: 100 }],
+    // "max-len": ["error", { ignoreComments: true, code: 100 }],
     "linebreak-style": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-static-element-interactions": 0,
