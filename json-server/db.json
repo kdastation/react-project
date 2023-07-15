@@ -65,7 +65,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.04.2022",
-      "userId": "1",
+      "user": {
+        "id": "1",
+        "name": "admin"
+      },
       "type": ["IT"],
       "blocks": [
         {
@@ -135,7 +138,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 3000,
       "createdAt": "26.04.2022",
-      "userId": "1",
+      "user": {
+        "id": "1",
+        "name": "admin"
+      },
       "type": ["IT"],
       "blocks": []
     },
@@ -146,7 +152,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 100,
       "createdAt": "26.04.2001",
-      "userId": "1",
+      "user": {
+        "id": "1",
+        "name": "admin"
+      },
       "type": ["IT"],
       "blocks": []
     }

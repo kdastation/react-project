@@ -10,10 +10,10 @@ export type FlexWrap = "nowrap" | "wrap";
 export type FlexGap = "4" | "8" | "16" | "24" | "32";
 
 export type FlexProps = {
-  align: FlexAlign;
-  justify: FlexJustify;
-  direction: FlexDirection;
-  wrap: FlexWrap;
+  align?: FlexAlign;
+  justify?: FlexJustify;
+  direction?: FlexDirection;
+  wrap?: FlexWrap;
   gap?: FlexGap;
   max?: boolean;
 } & DivProps;

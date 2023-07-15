@@ -1,5 +1,18 @@
 @import "@/shared/lib/scss/remCalc.scss";
 
 .container {
-  font-size: rem-calc(18);
+  padding: rem-calc(24);
+  background-color: var(--dark-bg, #090F11);
+  border-radius: rem-calc(32);
+  color: var(--text, #DBDBDB);
+  width: rem-calc(780);
+  height: rem-calc(700);
 }
+
+// color: var(--text, #DBDBDB);
+// /* Title */
+// font-family: Roboto;
+// font-size: 32px;
+// font-style: normal;
+// font-weight: 900;
+// line-height: normal;
