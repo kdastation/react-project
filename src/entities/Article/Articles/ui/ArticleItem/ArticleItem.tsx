@@ -1,15 +1,14 @@
-import { FC } from 'react';
-import { Article } from '@/entities/Article';
+import { FC } from "react";
+import { Article } from "@/entities/Article";
 
 type ArticleItemProps = {
-  article: Article,
-}
+  article: Article;
+};
 
-export const ArticleItem: FC<ArticleItemProps> = ({
-  article,
-}) => (
+export const ArticleItem: FC<ArticleItemProps> = ({ article }) => (
   <div>
-    Card Article
+    Card Article {article.id}
     <p>{article.title}</p>
+    <p>{article.views}</p>
   </div>
 );
