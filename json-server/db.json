@@ -66,9 +66,7 @@
       "views": 1022,
       "createdAt": "26.04.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -129,6 +127,28 @@
           ]
         }
       ]
+    },
+    {
+      "id": "2",
+      "title": "New news СВЕЖАЯ",
+      "subtitle": "Что нового в pizde за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 3000,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": ["IT"],
+      "blocks": []
+    },
+    {
+      "id": "3",
+      "title": "OLD OLD news",
+      "subtitle": "Что нового в qwe за 1993 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 100,
+      "createdAt": "26.04.2001",
+      "userId": "1",
+      "type": ["IT"],
+      "blocks": []
     }
   ]
 }

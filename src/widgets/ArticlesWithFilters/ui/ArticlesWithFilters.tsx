@@ -1,28 +1,19 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import {
-  fetchArticles,
-  rootSelectorArticles,
-  ArticleItem,
-} from '@/entities/Article/Articles';
+import { useEffect } from "react";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { fetchArticlesWithFilters, FiltersArticles } from "@/features/FiltersArticles";
+import { ArticlesList } from "@/features/ArticlesList";
 
 export const ArticlesWithFilters = () => {
   const dispatch = useAppDispatch();
-  const articles = useSelector(rootSelectorArticles.selectorArticlesAdapter.selectAll);
 
   useEffect(() => {
-    dispatch(fetchArticles());
+    dispatch(fetchArticlesWithFilters());
   }, []);
 
   return (
     <div>
-      {articles.map((article) => (
-        <ArticleItem
-          key={article.id}
-          article={article}
-        />
-      ))}
+      <FiltersArticles />
+      <ArticlesList />
     </div>
   );
 };

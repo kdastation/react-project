@@ -1,12 +1,12 @@
 export {
   actions as filtersArticlesActions,
   reducer as filtersArticlesReducer,
-} from "./model/slice";
+} from "./model/slice/slice";
 
-export { MODULE_NAME as MODULE_NAME_FILTERS_ARTICLES } from "./consts/moduleName";
+export { MODULE_NAME as MODULE_NAME_FILTERS_ARTICLES } from "./model/consts/moduleName";
 
-export { rootSelector } from "./selectors/rootSelector";
-
-export type { State as FiltersArticlesState } from "./types/types";
+export type { State as FiltersArticlesState } from "./model/types/state";
 
 export { FiltersArticles } from "./ui/FiltersArticles/FiltersArticles";
+
+export { fetchArticlesWithFilters } from "./model/services/fetchArticlesWithFilters";
