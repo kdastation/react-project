@@ -8,3 +8,5 @@ export { MODULE_NAME as MODULE_NAME_FILTERS_ARTICLES } from "./model/consts/modu
 export type { State as FiltersArticlesState } from "./model/types/state";
 
 export { FiltersArticles } from "./ui/FiltersArticles/FiltersArticles";
+
+export { fetchArticlesWithFilters } from "./model/services/fetchArticlesWithFilters";
