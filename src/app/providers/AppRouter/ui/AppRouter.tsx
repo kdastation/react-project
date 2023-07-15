@@ -1,13 +1,16 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { publicRoutes } from '../config/publicRoutes/publicRoutes';
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Route as RouteType } from "../types/Route";
+import { routesConfig } from "../config/routesConfig";
 
-const AppRouter = () => (
-  <Routes>
-    {publicRoutes.map((route) => (
-      <Route path={route.path} element={route.element} key={route.path} />
-    ))}
-  </Routes>
-);
+const AppRouter = () => {
+  const renderWithWrapper = (route: RouteType) => {
+    const element = <Suspense fallback={<div>loading...</div>}>{route.element}</Suspense>;
+
+    return <Route key={route.path} path={route.path} element={element} />;
+  };
+
+  return <Routes>{Object.values(routesConfig).map(renderWithWrapper)}</Routes>;
+};
 
 export { AppRouter };
