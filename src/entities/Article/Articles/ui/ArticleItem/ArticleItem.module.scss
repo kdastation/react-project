@@ -1,0 +1,5 @@
+@import "@/shared/lib/scss/remCalc.scss";
+
+.container {
+  font-size: rem-calc(18);
+}
