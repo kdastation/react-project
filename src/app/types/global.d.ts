@@ -24,3 +24,7 @@ type DeepPartial<T> = T extends object
   : T;
 
 type ValueOf<T> = T[keyof T];
+
+type OptionalRecord<K extends keyof any, T> = {
+  [key in K]?: T;
+};
