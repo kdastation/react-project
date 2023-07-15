@@ -17,6 +17,7 @@ export const routesConfig: Record<NamesPages, Route> = {
   [NAMES_PAGES.MAIN]: {
     path: getRouteMain(),
     element: <MainPage />,
+    authOnly: true,
   },
   [NAMES_PAGES.ABOUT]: {
     path: getRouteAbout(),
@@ -25,9 +26,11 @@ export const routesConfig: Record<NamesPages, Route> = {
   [NAMES_PAGES.ARTICLE]: {
     path: getRouteArticle(":id"),
     element: <ArticlePage />,
+    authOnly: true,
   },
   [NAMES_PAGES.PROFILE]: {
     path: getRouteProfile(),
     element: <ProfilePage />,
+    authOnly: true,
   },
 };

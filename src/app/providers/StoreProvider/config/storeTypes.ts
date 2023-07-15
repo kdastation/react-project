@@ -15,10 +15,7 @@ import {
   MODULE_NAME_EDITABLE_PROFILE_CARD,
   EditableProfileCardSliceState,
 } from "@/features/EditableProfileCard";
-import {
-  ArticleState,
-  MODULE_NAME_ARTICLE,
-} from "@/entities/Article/ArticleById";
+import { ArticleState, MODULE_NAME_ARTICLE } from "@/entities/Article/ArticleById";
 import {
   MODULE_NAME_ARTICLE_COMMENTS,
   ArticleCommentsState,
@@ -27,14 +24,8 @@ import {
   MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
   AddCommentForArticleState,
 } from "@/features/AddComment/addCommentForArticle";
-import {
-  ArticlesState,
-  MODULE_NAME_ARTICLES,
-} from "@/entities/Article/Articles";
-import {
-  FiltersArticlesState,
-  MODULE_NAME_FILTERS_ARTICLES,
-} from "@/features/FiltersArticles";
+import { ArticlesState, MODULE_NAME_ARTICLES } from "@/entities/Article/Articles";
+import { FiltersArticlesState, MODULE_NAME_FILTERS_ARTICLES } from "@/features/FiltersArticles";
 
 export type State = {
   user: UserSliceState;
@@ -62,7 +53,6 @@ export type ReduxStoreWithReducerManager = EnhancedStore<State> & {
 
 export type ThunkExtraArgs = {
   api: AxiosInstance;
-  navigate?: NavigateFunction;
 };
 
 export type ThunkConfig<T> = {
