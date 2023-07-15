@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import { ChangeEvent } from "react";
-import { TypesSort, typesSort } from "../../types/typeSort";
+import { ChangeEvent, FC } from "react";
+import { TypesSort, typesSort } from "../../model/types/typeSort";
 import { rootSelector } from "../../selectors/rootSelector";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-import { actions } from "../../model/slice";
+import { actions } from "../../model/slice/slice";
+import { FilterProps } from "../../model/types/FilterProps";
 
-export const TypeSort = () => {
+export const TypeSort: FC<FilterProps> = ({ fetchData }) => {
   const dispatch = useAppDispatch();
   const type = useSelector(rootSelector.selectTypeSort);
 
@@ -25,7 +26,10 @@ export const TypeSort = () => {
 
   const handleChangeType = (event: ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value as TypesSort;
+
     dispatch(actions.setTypeSort(value));
+
+    fetchData?.();
   };
 
   return (

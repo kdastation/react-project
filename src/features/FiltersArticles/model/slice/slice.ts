@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { OrderSort } from "../../../../shared/types/OrderSort";
 import { MODULE_NAME } from "../consts/moduleName";
 import { State } from "../types/state";
 import { typesSort, TypesSort } from "../types/typeSort";
@@ -6,6 +7,7 @@ import { typesSort, TypesSort } from "../types/typeSort";
 const initialState: State = {
   search: "",
   typeSort: typesSort.TITLE,
+  orderSort: "asc",
 };
 
 export const slice = createSlice({
@@ -17,6 +19,9 @@ export const slice = createSlice({
     },
     setTypeSort(state, { payload }: PayloadAction<TypesSort>) {
       state.typeSort = payload;
+    },
+    setOrderSort(state, { payload }: PayloadAction<OrderSort>) {
+      state.orderSort = payload;
     },
   },
 });
