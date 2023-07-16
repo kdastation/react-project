@@ -1,10 +1,9 @@
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { Theme } from "../../../../../app/providers/ThemeProvider/lib/ThemeContext";
-import { State } from "@/app/providers/StoreProvider/config/storeTypes";
+import { Theme } from "@/app/providers/ThemeProvider";
+import { StoreProviderProps } from "@/app/providers/StoreProvider";
 
 export type Options = {
   route?: string;
-  initialState?: DeepPartial<State>;
-  asyncReducers?: DeepPartial<ReducersMapObject<State>>;
+  initialState?: StoreProviderProps["initialState"];
+  asyncReducers?: StoreProviderProps["asyncReducers"];
   theme?: Theme;
 };
