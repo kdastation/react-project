@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-import { useDebounce } from "@/shared/lib/hooks/useDebounce";
+import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
 import { fetchArticlesWithFilters } from "../../model/services/fetchArticlesWithFilters";
 import { OrderSort } from "../OrderSort/OrderSort";
 import { Search } from "../Search/Search";

@@ -17,5 +17,12 @@ export const Search: FC<FilterProps> = ({ fetchData }) => {
     fetchData?.();
   };
 
-  return <input type="text" value={search} onChange={handleChangeSearch} />;
+  return (
+    <input
+      data-testid="FiltersArticles.Search"
+      type="text"
+      value={search}
+      onChange={handleChangeSearch}
+    />
+  );
 };

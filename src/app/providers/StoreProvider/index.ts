@@ -1,9 +1,6 @@
-import { createReduxStore } from './config/store';
-import { StoreProvider } from './ui/StoreProvider';
-import type { ThunkConfig } from '../StoreProvider/config/storeTypes';
+export { createReduxStore } from "./config/store";
+export { StoreProvider } from "./ui/StoreProvider";
 
-export {
-  StoreProvider,
-  createReduxStore,
-  ThunkConfig,
-};
+export type { ThunkConfig, State } from "../StoreProvider/config/storeTypes";
+
+export type { StoreProviderProps } from "./ui/StoreProvider";
