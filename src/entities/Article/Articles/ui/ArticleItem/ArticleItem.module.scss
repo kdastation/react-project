@@ -1,10 +1,10 @@
-@import "@/shared/lib/scss/remCalc.scss";
+@import "@/shared/lib/scss/remCalc";
 
 .container {
   padding: rem-calc(24);
-  background-color: var(--dark-bg, #090F11);
+  background-color: var(--dark-bg, #090f11);
   border-radius: rem-calc(32);
-  color: var(--text, #DBDBDB);
+  color: var(--text, #dbdbdb);
   width: rem-calc(780);
   height: rem-calc(700);
 }
