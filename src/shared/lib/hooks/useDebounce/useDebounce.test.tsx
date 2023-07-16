@@ -37,8 +37,8 @@ const Button = ({
   );
 };
 
-describe("use Debounce", () => {
-  test("test 1 ", async () => {
+describe("useDebounce", () => {
+  test("debounced Input ", async () => {
     const callback = jest.fn();
     render(<Input callback={callback} delay={100} />);
 
@@ -53,7 +53,7 @@ describe("use Debounce", () => {
     await waitFor(() => expect(callback).toHaveBeenCalledTimes(1), { timeout: 150 });
   });
 
-  test("test 2 ", async () => {
+  test("debounced Button", async () => {
     const callback = jest.fn();
     render(<Button callback={callback} delay={100} />);
 
