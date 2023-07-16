@@ -1,45 +1,49 @@
 export enum TypesArticle {
-  IT = 'IT'
+  IT = "IT",
 }
 
 export enum ArticleBlockTypes {
-  CODE = 'CODE',
-  TEXT = 'TEXT',
-  IMAGE = 'IMAGE'
+  CODE = "CODE",
+  TEXT = "TEXT",
+  IMAGE = "IMAGE",
 }
 
 export type ArticleBaseBlock = {
-  id: string,
-  type: ArticleBlockTypes
-}
+  id: string;
+  type: ArticleBlockTypes;
+};
 
 export type ArticleCodeBlock = ArticleBaseBlock & {
-  type: ArticleBlockTypes.CODE,
-  code: string
-}
+  type: ArticleBlockTypes.CODE;
+  code: string;
+};
 
 export type ArticleImageBlock = ArticleBaseBlock & {
-  type: ArticleBlockTypes.IMAGE,
-  title: string,
-  src: string
-}
+  type: ArticleBlockTypes.IMAGE;
+  title: string;
+  src: string;
+};
 
 export type ArticleTextBlock = ArticleBaseBlock & {
-  type: ArticleBlockTypes.TEXT,
-  title?: string,
-  paragraphs: string[]
-}
+  type: ArticleBlockTypes.TEXT;
+  title?: string;
+  paragraphs: string[];
+};
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
+export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export type Article = {
-  id: string,
-  title: string
-  subtitle: string,
-  img: string,
-  views: number,
-  createdAt: string,
-  userId: string,
-  type: TypesArticle[],
-  blocks: ArticleBlock[]
-}
+  id: string;
+  title: string;
+  subtitle: string;
+  img: string;
+  views: number;
+  createdAt: string;
+  // TODO: create one type user for entity
+  user: {
+    id: string;
+    name: string;
+  };
+  type: TypesArticle[];
+  blocks: ArticleBlock[];
+};

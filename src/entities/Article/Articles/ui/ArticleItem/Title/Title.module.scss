@@ -1,0 +1,7 @@
+@import "@/shared/lib/scss/remCalc";
+
+.container {
+  color: var(--text, #dbdbdb);
+  font-size: rem-calc(32);
+  font-weight: 900;
+}
