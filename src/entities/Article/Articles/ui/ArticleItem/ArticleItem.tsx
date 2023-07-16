@@ -11,7 +11,7 @@ type ArticleItemProps = {
 
 export const ArticleItem: FC<ArticleItemProps> = ({ article }) => (
   <VStack className={styles.container} gap="16">
-    <Header name={article.user.name} date={article.createdAt} />
+    {article.user && <Header name={article.user.name} date={article.createdAt} />}
     <Title title={article.title} />
     <p>{article.title}</p>
     <p>{article.views}</p>
