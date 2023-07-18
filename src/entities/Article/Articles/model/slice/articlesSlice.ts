@@ -20,7 +20,7 @@ export const articlesSlice = createSlice({
     isLoading: false,
     entities: {},
     error: null,
-    page: 0,
+    next: null,
   }),
   reducers: {},
   extraReducers: (builder) => {
@@ -29,7 +29,8 @@ export const articlesSlice = createSlice({
     });
     builder.addCase(fetchArticles.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      articlesAdapter.setAll(state, payload);
+      articlesAdapter.setAll(state, payload.data);
+      state.next = payload.next;
     });
     builder.addCase(fetchArticles.rejected, (state, { payload }) => {
       state.isLoading = false;
