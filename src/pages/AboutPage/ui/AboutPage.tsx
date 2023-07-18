@@ -1,7 +1,3 @@
-const AboutPage = () => (
-  <div>
-    About Page
-  </div>
-);
+const AboutPage = () => <div data-testid="AboutPage">About Page</div>;
 
 export { AboutPage };

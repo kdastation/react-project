@@ -4,7 +4,7 @@ export const ProfilePage = () => {
   const id = 1;
 
   return (
-    <div>
+    <div data-testid="ProfilePage">
       PROFILE PAGE
       <EditableProfileCard id={id} />
     </div>
