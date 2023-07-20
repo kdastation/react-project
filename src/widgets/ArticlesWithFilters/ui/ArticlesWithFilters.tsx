@@ -1,19 +1,9 @@
-import { useEffect } from "react";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-import { fetchArticlesWithFilters, FiltersArticles } from "@/features/FiltersArticles";
-import { ArticlesList } from "@/features/ArticlesList";
+import { FiltersArticles } from "@/features/FiltersArticles";
+import { Articles } from "./Articles/Articles";
 
-export const ArticlesWithFilters = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchArticlesWithFilters());
-  }, []);
-
-  return (
-    <div>
-      <FiltersArticles />
-      <ArticlesList />
-    </div>
-  );
-};
+export const ArticlesWithFilters = () => (
+  <div>
+    <FiltersArticles />
+    <Articles />
+  </div>
+);

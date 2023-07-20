@@ -3,6 +3,7 @@ import { OrderSort } from "@/shared/types/OrderSort";
 import { ThunkConfig } from "@/app/providers/StoreProvider";
 import { Article } from "@/entities/Article";
 import { MODULE_NAME } from "../consts/moduleName";
+import { parseLinkHeader } from "@/shared/lib/api/parseLinkHeader";
 
 type Args =
   | {
@@ -19,20 +20,11 @@ type Args =
       order?: never;
     };
 
-function parseLinkHeader(linkHeader: string) {
-  const linkHeadersArray = linkHeader.split(", ").map((header) => header.split("; "));
-  const linkHeadersMap = linkHeadersArray.map((header) => {
-    const thisHeaderRel = header[1].replace(/"/g, "").replace("rel=", "");
-    const thisHeaderUrl = header[0].slice(1, -1);
-    return [thisHeaderRel, thisHeaderUrl];
-  });
-  return Object.fromEntries(linkHeadersMap);
-}
-
 export const fetchArticles = createAsyncThunk<
   {
     data: Article[];
     next: string | null;
+    isMore: boolean;
   },
   Args | undefined,
   ThunkConfig<string>
@@ -41,9 +33,11 @@ export const fetchArticles = createAsyncThunk<
     if (args?.next) {
       const receivedData = await thunk.extra.api.get(args.next);
 
+      // TODO: add parse link header in middleware api
       return {
         data: receivedData.data,
-        next: parseLinkHeader(receivedData.headers.link).next,
+        next: receivedData.headers.link ? parseLinkHeader(receivedData.headers.link).next : null,
+        isMore: true,
       };
     }
 
@@ -63,7 +57,8 @@ export const fetchArticles = createAsyncThunk<
 
     return {
       data: receivedData.data,
-      next: parseLinkHeader(receivedData.headers.link).next,
+      next: receivedData.headers.link ? parseLinkHeader(receivedData.headers.link).next : null,
+      isMore: false,
     };
   } catch (error: any) {
     return thunk.rejectWithValue(error.message);

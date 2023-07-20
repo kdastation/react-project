@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useRef } from "react";
 
-export const useEvent = <T extends (...args: any[]) => any>(fn: T) => {
+export const useCallbackRef = <T extends (...args: any[]) => any>(fn: T) => {
   const fnRef = useRef(fn);
 
   useLayoutEffect(() => {
