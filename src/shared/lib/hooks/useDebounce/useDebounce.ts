@@ -1,10 +1,10 @@
 import { MutableRefObject, useCallback, useRef } from "react";
-import { useEvent } from "@/shared/lib/hooks/useEvent";
+import { useCallbackRef } from "@/shared/lib/hooks/useCallbackRef";
 
 export const useDebounce = <T extends (...args: any[]) => any>(callback: T, delay: number) => {
   // TODO: зарефакторить
   const timer = useRef() as MutableRefObject<any>;
-  const eventCallback = useEvent(callback);
+  const eventCallback = useCallbackRef(callback);
 
   return useCallback(
     (...args: Parameters<T>) => {
