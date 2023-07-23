@@ -6,7 +6,6 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { NavigateFunction } from "react-router-dom";
 import { UserSliceState } from "@/entities/User";
 import { LoginByUserNameSliceState } from "@/features/LoginByUserName/index";
 import { KeysReducers } from "@/app/providers/StoreProvider/config/rootReducer";
@@ -26,6 +25,7 @@ import {
 } from "@/features/AddComment/addCommentForArticle";
 import { ArticlesState, MODULE_NAME_ARTICLES } from "@/entities/Article/Articles";
 import { FiltersArticlesState, MODULE_NAME_FILTERS_ARTICLES } from "@/features/FiltersArticles";
+import { MODULE_NAME_MUSICS, MusicsState } from "@/entities/Music/Musics";
 
 export type State = {
   user: UserSliceState;
@@ -38,6 +38,7 @@ export type State = {
   [MODULE_NAME_ADD_COMMENT_FOR_ARTICLE]: AddCommentForArticleState;
   [MODULE_NAME_ARTICLES]: ArticlesState;
   [MODULE_NAME_FILTERS_ARTICLES]: FiltersArticlesState;
+  [MODULE_NAME_MUSICS]: MusicsState;
 };
 
 export type ReducerManager = {
