@@ -4,4 +4,6 @@ export { reducer as musicsReducer, actions as musicsActions } from "./model/slic
 
 export { fetchMusics } from "./model/services/fetchMusics";
 
+export { rootSelector as rootSelectorMusics } from "./model/selectors/rootSelector";
+
 export type { State as MusicsState } from "./model/types/State";
