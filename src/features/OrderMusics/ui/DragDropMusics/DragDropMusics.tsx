@@ -1,38 +1,16 @@
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
-import {
-  arrayMove,
-  SortableContext,
-  verticalListSortingStrategy,
-  useSortable,
-} from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
+
 import { FC, ReactNode } from "react";
 import { useDispatch } from "react-redux";
 import { Music } from "@/entities/Music";
 import { changeOrderMusic } from "../../model/services/changeOrderMusic";
 import { musicsActions } from "@/entities/Music/Musics";
+import { TriggerSortableItem } from "@/shared/components/TriggerSortableItem";
 
 type DragDropMusicsProps = {
   musics: Music[];
   renderItem: (mucis: Music) => ReactNode;
-};
-
-// TODO: refactoring
-const SortableItem = ({ id, children }: { id: number; children: ReactNode }) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
-    id,
-  });
-
-  const style = {
-    transition,
-    transform: CSS.Transform.toString(transform),
-  };
-
-  return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      {children}
-    </div>
-  );
 };
 
 export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, renderItem }) => {
@@ -63,9 +41,9 @@ export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, renderItem }) 
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={musics} strategy={verticalListSortingStrategy}>
         {musics.map((music) => (
-          <SortableItem key={music.id} id={music.id}>
-            {renderItem(music)}
-          </SortableItem>
+          <TriggerSortableItem key={music.id} id={music.id}>
+            <div>{renderItem(music)}</div>
+          </TriggerSortableItem>
         ))}
       </SortableContext>
     </DndContext>
