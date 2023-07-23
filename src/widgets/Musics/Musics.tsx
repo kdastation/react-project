@@ -14,15 +14,7 @@ export const Musics = () => {
   }, []);
 
   // const handleDragEnd = (event: DragEndEvent) => {
-  //   const { active, over } = event;
 
-  //   if (over && active.id !== over?.id) {
-  //     setMusics((items) => {
-  //       const activeIndex = items.findIndex((music) => music.id === active.id);
-  //       const overIndex = items.findIndex((music) => music.id === over.id);
-  //       return arrayMove(items, activeIndex, overIndex);
-  //     });
-  //   }
   // };
 
   return (

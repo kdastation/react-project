@@ -58,26 +58,25 @@ server.put("/music/order", (req, res) => {
   try {
     const db = getDbData();
 
-    const orders = req.body;
+    const { musicId1, musicId2 } = req.body;
 
-    const updatedOrderMusic = db.music.map((music) => {
-      if (orders[music.id] !== null && orders[music.id] !== undefined) {
-        return {
-          ...music,
-          order: orders[music.id],
-        };
-      }
+    const { music } = db;
 
-      return music;
-    });
+    const music1 = music.find((music) => music.id === musicId1);
 
-    db.music = updatedOrderMusic;
+    const music2 = music.find((music) => music.id === musicId2);
+
+    const temOrderMusic1 = music1.order;
+
+    music1.order = music2.order;
+
+    music2.order = temOrderMusic1;
 
     fs.writeFile(path.resolve(__dirname, "db.json"), JSON.stringify(db), (error) => {
       console.log(error);
     });
 
-    return res.json(updatedOrderMusic);
+    return res.json(music);
   } catch (error) {
     return res.status(500).json({ message: e?.message || "error" });
   }

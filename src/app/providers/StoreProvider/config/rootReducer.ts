@@ -15,6 +15,7 @@ import {
 import { MODULE_NAME_ARTICLES, articlesReducer } from "@/entities/Article/Articles";
 import { MODULE_NAME_FILTERS_ARTICLES, filtersArticlesReducer } from "@/features/FiltersArticles";
 import { MODULE_NAME_MUSICS, musicsReducer } from "@/entities/Music/Musics";
+import { MODULE_NAME_CHANGE_ORDER_MUSICS, changeOrderMusicReducer } from "@/features/OrderMusics";
 
 export const rootReducer: ReducersMapObject<State> = {
   [MODULE_NAME_USER_SLICE]: userReducer,
@@ -25,6 +26,7 @@ export const rootReducer: ReducersMapObject<State> = {
   [MODULE_NAME_ARTICLES]: articlesReducer,
   [MODULE_NAME_FILTERS_ARTICLES]: filtersArticlesReducer,
   [MODULE_NAME_MUSICS]: musicsReducer,
+  [MODULE_NAME_CHANGE_ORDER_MUSICS]: changeOrderMusicReducer,
 };
 
 export type KeysReducers = keyof ReducersMapObject<State>;
