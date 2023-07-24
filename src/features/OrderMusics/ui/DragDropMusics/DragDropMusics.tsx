@@ -6,14 +6,13 @@ import { useDispatch } from "react-redux";
 import { Music } from "@/entities/Music";
 import { changeOrderMusic } from "../../model/services/changeOrderMusic";
 import { musicsActions } from "@/entities/Music/Musics";
-import { TriggerSortableItem } from "@/shared/components/TriggerSortableItem";
 
 type DragDropMusicsProps = {
   musics: Music[];
-  renderItem: (mucis: Music) => ReactNode;
+  children?: ReactNode;
 };
 
-export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, renderItem }) => {
+export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, children }) => {
   const dispatch = useDispatch();
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -40,11 +39,7 @@ export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, renderItem }) 
   return (
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={musics} strategy={verticalListSortingStrategy}>
-        {musics.map((music) => (
-          <TriggerSortableItem key={music.id} id={music.id}>
-            <div>{renderItem(music)}</div>
-          </TriggerSortableItem>
-        ))}
+        {children}
       </SortableContext>
     </DndContext>
   );

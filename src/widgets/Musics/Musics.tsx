@@ -4,6 +4,7 @@ import { fetchMusics, rootSelectorMusics } from "@/entities/Music/Musics";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { MusicItem } from "@/entities/Music/Musics/ui/MusicItem/MusicItem";
 import { DragDropMusics } from "@/features/OrderMusics";
+import { SortableItemRoot, TriggerDrag } from "@/shared/components/DragDrop";
 
 export const Musics = () => {
   const dispatch = useAppDispatch();
@@ -13,13 +14,17 @@ export const Musics = () => {
     dispatch(fetchMusics());
   }, []);
 
-  // const handleDragEnd = (event: DragEndEvent) => {
-
-  // };
-
   return (
     <div>
-      <DragDropMusics musics={musics} renderItem={(music) => <MusicItem text={music.text} />} />
+      <DragDropMusics musics={musics}>
+        {musics.map((music) => (
+          <SortableItemRoot key={music.id} id={music.id}>
+            <div>
+              <MusicItem text={music.text} rightAddon={<TriggerDrag>trigger</TriggerDrag>} />
+            </div>
+          </SortableItemRoot>
+        ))}
+      </DragDropMusics>
     </div>
   );
 };

@@ -1,17 +1,19 @@
-import { FC, ReactElement, ReactNode, cloneElement, createElement, isValidElement } from "react";
+import { FC, ReactElement, ReactNode, cloneElement, isValidElement, useMemo } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { Id } from "@/shared/types/Id";
+import { ContextProvider } from "../Context/Context";
 
 type TriggerSortableItemProps = {
   id: Id;
   children: (() => ReactNode) | ReactElement<HTMLElement>;
 };
 
-export const TriggerSortableItem: FC<TriggerSortableItemProps> = ({ children, id }) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
-    id,
-  });
+export const SortableItemRoot: FC<TriggerSortableItemProps> = ({ children, id }) => {
+  const { attributes, listeners, setNodeRef, transform, transition, setActivatorNodeRef } =
+    useSortable({
+      id,
+    });
 
   const style = {
     transition,
@@ -20,7 +22,7 @@ export const TriggerSortableItem: FC<TriggerSortableItemProps> = ({ children, id
 
   const renderChildren = () => {
     // TODO: refactoring
-    console.log(listeners);
+
     if (isValidElement(children)) {
       return cloneElement(children, {
         ...children.props,
@@ -38,5 +40,14 @@ export const TriggerSortableItem: FC<TriggerSortableItemProps> = ({ children, id
     return null;
   };
 
-  return <>{renderChildren()}</>;
+  const context = useMemo(
+    () => ({
+      attributes,
+      listeners,
+      ref: setActivatorNodeRef,
+    }),
+    [attributes, listeners, setActivatorNodeRef],
+  );
+
+  return <ContextProvider value={context}>{renderChildren()}</ContextProvider>;
 };
