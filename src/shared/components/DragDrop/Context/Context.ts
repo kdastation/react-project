@@ -1,5 +1,5 @@
 import { DraggableSyntheticListeners } from "@dnd-kit/core";
-import { createContext } from "react";
+import { createContext } from "@/shared/lib/hooks/context";
 
 type ContextProps = {
   attributes: Record<string, any>;
@@ -7,6 +7,8 @@ type ContextProps = {
   ref(node: HTMLElement | null): void;
 };
 
-export const Context = createContext<ContextProps | null>(null);
-
-export const ContextProvider = Context.Provider;
+export const [SortableItemRootProvider, useSortableItemRoot] = createContext<ContextProps>({
+  name: "SortableItemRootContext",
+  hookName: "useSortableItemRoot",
+  providerName: "<SortableItemRoot />",
+});

@@ -5,7 +5,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { isFunction } from "@/shared/lib/core/guard";
 import { Id } from "@/shared/types/Id";
 
-import { ContextProvider } from "../Context/Context";
+import { SortableItemRootProvider } from "../Context/Context";
 
 type TriggerSortableItemProps = {
   id: Id;
@@ -52,5 +52,5 @@ export const SortableItemRoot: FC<TriggerSortableItemProps> = ({ children, id })
     [attributes, listeners, setActivatorNodeRef],
   );
 
-  return <ContextProvider value={context}>{renderChildren()}</ContextProvider>;
+  return <SortableItemRootProvider value={context}>{renderChildren()}</SortableItemRootProvider>;
 };

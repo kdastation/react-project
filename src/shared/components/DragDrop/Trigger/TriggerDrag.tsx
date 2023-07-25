@@ -1,6 +1,8 @@
-import { ReactNode, forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
+
 import { ButtonProps } from "@/shared/types/ButtonProps";
-import { useContext } from "../Context/useContext";
+
+import { useSortableItemRoot } from "../Context/Context";
 
 type TriggerDragProps = {
   children?: ReactNode;
@@ -8,7 +10,7 @@ type TriggerDragProps = {
 
 // TODO: add merge refs
 export const TriggerDrag = forwardRef<HTMLButtonElement, TriggerDragProps>((props, ref) => {
-  const { attributes, listeners, ref: setRef } = useContext();
+  const { attributes, listeners, ref: setRef } = useSortableItemRoot();
 
   return <button {...props} {...attributes} {...listeners} ref={setRef} />;
 });
