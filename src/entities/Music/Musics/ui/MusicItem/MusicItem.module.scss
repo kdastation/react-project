@@ -1,0 +1,6 @@
+@import "@/shared/lib/scss/remCalc";
+
+.container {
+  padding: rem-calc(10) remc(20);
+  width: 100%;
+}
