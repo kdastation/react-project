@@ -1,11 +1,19 @@
-import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core";
-import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-
 import { FC, ReactNode } from "react";
 import { useDispatch } from "react-redux";
+
+import {
+  closestCenter,
+  DndContext,
+  DragEndEvent,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { Music } from "@/entities/Music";
-import { changeOrderMusic } from "../../model/services/changeOrderMusic";
 import { musicsActions } from "@/entities/Music/Musics";
+
+import { changeOrderMusic } from "../../model/services/changeOrderMusic";
 
 type DragDropMusicsProps = {
   musics: Music[];
@@ -14,6 +22,14 @@ type DragDropMusicsProps = {
 
 export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, children }) => {
   const dispatch = useDispatch();
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    }),
+  );
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
@@ -37,7 +53,7 @@ export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, children }) =>
   };
 
   return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={musics} strategy={verticalListSortingStrategy}>
         {children}
       </SortableContext>
