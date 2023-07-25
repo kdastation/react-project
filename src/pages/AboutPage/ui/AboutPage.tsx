@@ -1,4 +1,4 @@
-import { Musics } from "@/widgets/Musics/Musics";
+import { Musics } from "@/widgets/Musics";
 
 const AboutPage = () => (
   <div data-testid="AboutPage">
