@@ -1,7 +1,10 @@
-import { FC, ReactElement, ReactNode, cloneElement, isValidElement, useMemo } from "react";
+import { cloneElement, FC, isValidElement, ReactElement, ReactNode, useMemo } from "react";
+
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { isFunction } from "@/shared/lib/core/guard";
 import { Id } from "@/shared/types/Id";
+
 import { ContextProvider } from "../Context/Context";
 
 type TriggerSortableItemProps = {
@@ -33,7 +36,7 @@ export const SortableItemRoot: FC<TriggerSortableItemProps> = ({ children, id })
       });
     }
 
-    if (typeof children === "function") {
+    if (isFunction(children)) {
       return children();
     }
 
