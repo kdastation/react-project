@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+
 import { fetchMusics, rootSelectorMusics } from "@/entities/Music/Musics";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { MusicItem } from "@/entities/Music/Musics/ui/MusicItem/MusicItem";
 import { DragDropMusics } from "@/features/OrderMusics";
 import { SortableItemRoot, TriggerDrag } from "@/shared/components/DragDrop";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 export const Musics = () => {
   const dispatch = useAppDispatch();
