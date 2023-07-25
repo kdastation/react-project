@@ -5,7 +5,7 @@ import { fetchMusics, rootSelectorMusics } from "@/entities/Music/Musics";
 import { MusicItem } from "@/entities/Music/Musics/ui/MusicItem/MusicItem";
 import { DeleteMusicButton } from "@/features/DeleteMusic";
 import { DragDropMusics } from "@/features/OrderMusics";
-import { SortableItemRoot } from "@/shared/components/DragDrop";
+import { SortableItemRoot, TriggerDrag } from "@/shared/components/DragDrop";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { HStack } from "@/shared/ui/Stack";
 
@@ -27,13 +27,7 @@ export const Musics = () => {
                 text={music.text}
                 rightAddon={
                   <HStack gap="4">
-                    <button
-                      onClick={() => {
-                        console.log("on click");
-                      }}
-                    >
-                      asdad
-                    </button>
+                    <TriggerDrag>drag</TriggerDrag>
                     <DeleteMusicButton musicId={music.id} />
                   </HStack>
                 }

@@ -1,5 +1,7 @@
+import { Id } from "@/shared/types/Id";
+
 export type Music = {
-  id: number;
+  id: Id;
   text: string;
   order: number;
 };

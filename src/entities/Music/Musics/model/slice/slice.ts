@@ -1,8 +1,10 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { arrayMove } from "@dnd-kit/sortable";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Id } from "@/shared/types/Id";
+
 import { MODULE_NAME } from "../consts/moduleName";
-import { State } from "../types/State";
 import { fetchMusics } from "../services/fetchMusics";
+import { State } from "../types/State";
 
 const initialState: State = {
   isLoading: false,
@@ -29,6 +31,9 @@ export const slice = createSlice({
       const indexMusic2 = state.data.findIndex((music) => music.id === id2);
 
       state.data = arrayMove(state.data, indexMusic1, indexMusic2);
+    },
+    removeOne(state, { payload }: PayloadAction<{ id: Id }>) {
+      state.data = state.data.filter((music) => music.id !== payload.id);
     },
   },
   extraReducers: (builder) => {
