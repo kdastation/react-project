@@ -1,8 +1,10 @@
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { createReducerManager } from "@/app/providers/StoreProvider/lib/createReducerManager";
 import { api } from "@/shared/api/api";
-import { State, ThunkExtraArgs } from "./storeTypes";
+import { rtkApi } from "@/shared/api/rtkApi";
+
 import { rootReducer } from "./rootReducer";
+import { State, ThunkExtraArgs } from "./storeTypes";
 
 export const createReduxStore = (
   initialState?: State,
@@ -26,7 +28,7 @@ export const createReduxStore = (
         thunk: {
           extraArgument,
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
 
   // @ts-ignore

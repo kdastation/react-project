@@ -29,9 +29,11 @@ import {
 import { FiltersArticlesState, MODULE_NAME_FILTERS_ARTICLES } from "@/features/FiltersArticles";
 import { LoginByUserNameSliceState } from "@/features/LoginByUserName/index";
 import { ChangeOrderMusicState, MODULE_NAME_CHANGE_ORDER_MUSICS } from "@/features/OrderMusics";
+import { rtkApi } from "@/shared/api/rtkApi";
 
 export type State = {
   user: UserSliceState;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState;

@@ -64,9 +64,7 @@
         "id": "1",
         "name": "admin"
       },
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -139,9 +137,7 @@
         "id": "1",
         "name": "admin"
       },
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": []
     },
     {
@@ -155,9 +151,7 @@
         "id": "1",
         "name": "admin"
       },
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": []
     }
   ],
@@ -171,6 +165,20 @@
       "id": 3,
       "text": "text 3 text 3",
       "order": 3
+    }
+  ],
+  "playlist": [
+    {
+      "id": 1,
+      "name": "rap"
+    },
+    {
+      "id": 2,
+      "name": "popular"
+    },
+    {
+      "id": 3,
+      "name": "phonk"
     }
   ]
 }
