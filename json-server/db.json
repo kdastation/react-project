@@ -172,5 +172,115 @@
       "text": "text 3 text 3",
       "order": 3
     }
+  ],
+  "playlist": [
+    {
+      "id": 1,
+      "name": "rap"
+    },
+    {
+      "id": 2,
+      "name": "popular"
+    },
+    {
+      "id": 3,
+      "name": "phonk"
+    },
+    {
+      "name": "asdasdsad",
+      "id": 4
+    },
+    {
+      "name": "asd",
+      "id": 5
+    },
+    {
+      "name": "new play",
+      "id": 6
+    },
+    {
+      "name": "1",
+      "id": 7
+    },
+    {
+      "name": "2",
+      "id": 8
+    },
+    {
+      "name": "33",
+      "id": 9
+    },
+    {
+      "name": "334",
+      "id": 10
+    },
+    {
+      "name": "asdsad",
+      "id": 11
+    },
+    {
+      "name": "qe",
+      "id": 12
+    },
+    {
+      "name": "asd",
+      "id": 13
+    },
+    {
+      "name": "new",
+      "id": 14
+    },
+    {
+      "name": "new2",
+      "id": 15
+    },
+    {
+      "name": "re",
+      "id": 16
+    },
+    {
+      "name": "ke",
+      "id": 17
+    },
+    {
+      "name": "kek",
+      "id": 18
+    },
+    {
+      "name": "kek2",
+      "id": 19
+    },
+    {
+      "name": "kek3",
+      "id": 20
+    },
+    {
+      "name": "kek4",
+      "id": 21
+    },
+    {
+      "name": "kek5",
+      "id": 22
+    },
+    {
+      "name": "mem",
+      "id": 23
+    },
+    {
+      "name": "sadasdasd",
+      "id": 24
+    },
+    {
+      "name": "new playlist",
+      "id": 25
+    },
+    {
+      "name": "newww",
+      "id": 26
+    },
+    {
+      "name": "rty",
+      "id": 27
+    }
   ]
 }
