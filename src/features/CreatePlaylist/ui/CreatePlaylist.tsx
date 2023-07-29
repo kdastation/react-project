@@ -1,43 +1,18 @@
-import { useState } from "react";
+import { useBoolean } from "@/shared/lib/hooks/useBoolean";
+import { Modal } from "@/shared/ui/redesign/Modal";
 
-import { playlistApi } from "@/entities/Playlist";
-import { api } from "@/entities/Playlist/model/api/api";
-import { tags } from "@/shared/api";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-
-import { useCreatePlaylistMutation } from "../model/api/api";
+import { Form } from "./Form/Form";
 
 export const CreatePlaylist = () => {
-  const dispatch = useAppDispatch();
-  const [name, setName] = useState("");
-  const [createPlaylist, { isLoading }] = useCreatePlaylistMutation();
-
-  const handleCreatePlaylist = async () => {
-    try {
-      const data = await createPlaylist({
-        name,
-      }).unwrap();
-
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const [visible, setVisible] = useBoolean(false);
 
   return (
-    <div>
-      Create new Playlist!
-      {isLoading && <div>loading...</div>}
-      <input
-        type="text"
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-        value={name}
-      />
-      <button disabled={isLoading} onClick={handleCreatePlaylist}>
-        create
-      </button>
-    </div>
+    <>
+      <button onClick={setVisible.on}>create playlist</button>
+
+      <Modal isOpen={visible} onClose={setVisible.off}>
+        <Form onSuccess={setVisible.off} />
+      </Modal>
+    </>
   );
 };
