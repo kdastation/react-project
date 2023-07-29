@@ -1,5 +1,5 @@
-import { Theme } from "@/app/providers/ThemeProvider";
 import { StoreProviderProps } from "@/app/providers/StoreProvider";
+import { Theme } from "@/app/providers/ThemeProvider";
 
 export type Options = {
   route?: string;

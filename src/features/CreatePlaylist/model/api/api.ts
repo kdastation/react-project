@@ -1,4 +1,5 @@
 import { Playlist } from "@/entities/Playlist";
+import { tags } from "@/shared/api";
 import { rtkApi } from "@/shared/api/rtkApi";
 
 type Args = {
@@ -13,6 +14,7 @@ const api = rtkApi.injectEndpoints({
         method: "POST",
         body: arg,
       }),
+      invalidatesTags: [{ type: tags.PLAYLIST_TAG, id: "LIST" }],
     }),
   }),
 });
