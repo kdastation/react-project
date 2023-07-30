@@ -1,12 +1,14 @@
 import React, { FC, useState } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
-import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher";
+
 import { LoginModal } from "@/features/LoginByUserName";
-import { Button } from "@/shared/ui/Button";
-import styles from "./Header.module.scss";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { getRouteArticle, getRouteProfile } from "@/shared/router";
+import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
+import { Button } from "@/shared/ui/Button";
 import { HStack } from "@/shared/ui/Stack";
+import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher";
+
+import styles from "./Header.module.scss";
 
 interface HeaderProps {
   className?: string;
@@ -34,7 +36,11 @@ const Header: FC<HeaderProps> = ({ className }) => {
           main
         </AppLink>
 
-        <AppLink theme={AppLinkTheme.INVERTED_PRIMARY} to={getRouteProfile()}>
+        <AppLink
+          data-testid="ProfileLink"
+          theme={AppLinkTheme.INVERTED_PRIMARY}
+          to={getRouteProfile()}
+        >
           profile
         </AppLink>
 
@@ -42,7 +48,9 @@ const Header: FC<HeaderProps> = ({ className }) => {
           article 1
         </AppLink>
 
-        <Button onClick={handleShowLoginFormModal}>войти</Button>
+        <Button data-testid="SYKA" onClick={handleShowLoginFormModal}>
+          войти
+        </Button>
       </HStack>
 
       <LoginModal isOpen={isOpenLoginFormModal} onClose={handleCloseLoginFormModal} />

@@ -8,7 +8,9 @@ export const CreatePlaylist = () => {
 
   return (
     <>
-      <button onClick={setVisible.on}>create playlist</button>
+      <button data-testid="CreatePlaylistButton" onClick={setVisible.on}>
+        create playlist
+      </button>
 
       <Modal isOpen={visible} onClose={setVisible.off}>
         <Form onSuccess={setVisible.off} />

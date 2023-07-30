@@ -1,16 +1,16 @@
+import { AboutPage } from "@/pages/AboutPage";
+import { ArticlePage } from "@/pages/ArticlePage/ArticlePage";
+import { MainPage } from "@/pages/MainPage";
+import { ProfilePage } from "@/pages/ProfilePage/ProfilePage";
 import {
-  NamesPages,
-  NAMES_PAGES,
   getRouteAbout,
   getRouteArticle,
   getRouteMain,
   getRouteProfile,
+  NAMES_PAGES,
+  NamesPages,
 } from "@/shared/router";
 
-import { MainPage } from "@/pages/MainPage";
-import { AboutPage } from "@/pages/AboutPage";
-import { ProfilePage } from "@/pages/ProfilePage/ProfilePage";
-import { ArticlePage } from "@/pages/ArticlePage/ArticlePage";
 import { Route } from "../types/Route";
 
 export const routesConfig: Record<NamesPages, Route> = {

@@ -19,8 +19,9 @@
     "visual-report": "npm run visual-report-json && npm run visual-report-html",
     "visual-report-json": "node ./scripts/generateVisiualJsonReport.js",
     "visual-report-html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "dev-server": "node ./json-server/index.js",
-    "fix-alias-imports": "ts-node ./scripts/addAliasImports.ts"
+    "dev-server": "node ./json-server/index.js --no-cors",
+    "fix-alias-imports": "ts-node ./scripts/addAliasImports.ts",
+    "test-e2e": "npx cypress open"
   },
   "keywords": [],
   "author": "",
@@ -56,6 +57,7 @@
     "@typescript-eslint/parser": "^5.38.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
+    "cypress": "^12.17.2",
     "eslint": "8.22.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
