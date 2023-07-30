@@ -9,7 +9,11 @@ export const FoundedMusic = () => {
   const search = useSelector(rootSelector.selectSearchValue);
   const selectedMusic = useSelector(rootSelector.selectSelectedMusic);
 
-  const { data: music, isLoading } = useGetMusicQuery({ search });
+  const { data: music, isLoading, isFetching } = useGetMusicQuery({ search });
+
+  if (isFetching) {
+    return <div>loading...</div>;
+  }
 
   return (
     <div>
