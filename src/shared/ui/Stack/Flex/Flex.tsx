@@ -1,7 +1,10 @@
 import { FC } from "react";
+
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import styles from "./Flex.module.scss";
 import { DivProps } from "@/shared/types/DivProps";
+import { TestProps } from "@/shared/types/TestProps";
+
+import styles from "./Flex.module.scss";
 
 export type FlexJustify = "start" | "center" | "end" | "between";
 export type FlexAlign = "start" | "center" | "end";
@@ -16,7 +19,8 @@ export type FlexProps = {
   wrap?: FlexWrap;
   gap?: FlexGap;
   max?: boolean;
-} & DivProps;
+} & DivProps &
+  TestProps;
 
 const alignClasses: Record<FlexAlign, string> = {
   start: styles.align_start,

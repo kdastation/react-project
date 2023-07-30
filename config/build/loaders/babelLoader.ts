@@ -15,7 +15,7 @@ export const babelLoader = ({ isTsx, isDev }: BabelLoader) => ({
       plugins: [
         ['@babel/plugin-transform-typescript', { isTsx }],
         '@babel/plugin-transform-runtime',
-        isTsx && [babelRemoveAttributesPlugin, { attributes: ['data-testid'] }],
+        isTsx && !isDev && [babelRemoveAttributesPlugin, { attributes: ['data-testid'] }],
         isDev && require.resolve('react-refresh/babel'),
       ].filter(Boolean),
     },

@@ -29,6 +29,7 @@ export const Form = ({ onError, onSuccess }: FormProps) => {
       {isLoading && <div>loading...</div>}
       <div>
         <input
+          data-testid="CreatePlaylistNameInput"
           type="text"
           onChange={(e) => {
             setName(e.target.value);
@@ -37,7 +38,11 @@ export const Form = ({ onError, onSuccess }: FormProps) => {
         />
       </div>
       <div>
-        <button disabled={isLoading} onClick={handleCreatePlaylist}>
+        <button
+          data-testid="CreatePlaylistSubmit"
+          disabled={isLoading}
+          onClick={handleCreatePlaylist}
+        >
           create
         </button>
       </div>
