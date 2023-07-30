@@ -9,3 +9,5 @@ export { rootSelector as rootSelectorMusics } from "./model/selectors/rootSelect
 export type { State as MusicsState } from "./model/types/State";
 
 export { useGetMusicQuery } from "./model/api/api";
+
+export { MusicItem } from "./ui/MusicItem/MusicItem";

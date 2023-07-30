@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { useCreatePlaylistMutation } from "../../model/api/api";
+import { SearchMusic } from "../SearchMusic/SearchMusic";
 
 type FormProps = {
   onSuccess?: () => void;
@@ -37,6 +38,7 @@ export const Form = ({ onError, onSuccess }: FormProps) => {
           value={name}
         />
       </div>
+      <SearchMusic />
       <div>
         <button
           data-testid="CreatePlaylistSubmit"

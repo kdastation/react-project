@@ -1,11 +1,9 @@
 import { Music } from "@/entities/Music/model/types/Music";
 import { rtkApi, tags } from "@/shared/api";
 
-type Args =
-  | {
-      search?: string;
-    }
-  | undefined;
+type Args = {
+  search?: string;
+} | void;
 
 export const api = rtkApi.injectEndpoints({
   endpoints: (build) => ({
@@ -13,7 +11,7 @@ export const api = rtkApi.injectEndpoints({
       query: (args) => ({
         url: "/music",
         params: {
-          _search: args?.search || "",
+          text_like: args?.search || "",
         },
       }),
       providesTags: (result) =>

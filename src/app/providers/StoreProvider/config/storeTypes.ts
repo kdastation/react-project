@@ -21,6 +21,7 @@ import {
   AddCommentForArticleState,
   MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
 } from "@/features/AddComment/addCommentForArticle";
+import { CreatePlaylistState, MODULE_NAME_CREATE_PLAYLIST } from "@/features/CreatePlaylist";
 import { DeleteMusicState, MODULE_NAME_DELETE_MUSIC } from "@/features/DeleteMusic";
 import {
   EditableProfileCardSliceState,
@@ -37,6 +38,7 @@ export type State = {
 
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState;
+  [MODULE_NAME_CREATE_PLAYLIST]?: CreatePlaylistState;
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState;
   [MODULE_NAME_ARTICLE]: ArticleState;
   [MODULE_NAME_ARTICLE_COMMENTS]: ArticleCommentsState;

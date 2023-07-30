@@ -42,17 +42,17 @@ server.post("/login", (req, res) => {
   }
 });
 
-server.get("/music", (req, res) => {
-  try {
-    const { music } = getDbData();
+// server.get("/music", (req, res) => {
+//   try {
+//     const { music } = getDbData();
 
-    const sortedMusic = music.sort((a, b) => a.order - b.order);
+//     const sortedMusic = music.sort((a, b) => a.order - b.order);
 
-    return res.json(sortedMusic);
-  } catch (error) {
-    return res.status(500).json({ message: e.message });
-  }
-});
+//     return res.json(sortedMusic);
+//   } catch (error) {
+//     return res.status(500).json({ message: e.message });
+//   }
+// });
 
 server.put("/music/order", (req, res) => {
   try {
