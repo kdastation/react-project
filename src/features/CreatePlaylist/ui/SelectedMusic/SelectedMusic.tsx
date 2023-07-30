@@ -7,7 +7,7 @@ export const SelectedMusic = () => {
   const selectedMusic = useSelector(rootSelector.selectSelectedMusic);
 
   return (
-    <div>
+    <div data-testid="SelectedMusic">
       {Object.values(selectedMusic).map((music) => (
         <MusicItem music={music} isAdded={Boolean(selectedMusic[music.id])} />
       ))}

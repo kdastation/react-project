@@ -16,7 +16,7 @@ export const SearchMusic = () => {
 
   return (
     <div>
-      <input type="text" value={search} onChange={handleSearch} />
+      <input data-testid="SearchMusic" type="text" value={search} onChange={handleSearch} />
     </div>
   );
 };

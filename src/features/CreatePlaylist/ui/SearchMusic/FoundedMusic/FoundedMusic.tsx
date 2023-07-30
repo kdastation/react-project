@@ -16,7 +16,7 @@ export const FoundedMusic = () => {
   }
 
   return (
-    <div>
+    <div data-testid="FoundedMusic">
       {music?.map((music) => (
         <MusicItem music={music} isAdded={Boolean(selectedMusic[music.id])} />
       ))}
