@@ -9,7 +9,9 @@ export const SelectedMusic = () => {
   return (
     <div data-testid="SelectedMusic">
       {Object.values(selectedMusic).map((music) => (
-        <MusicItem music={music} isAdded={Boolean(selectedMusic[music.id])} />
+        <div data-testid="SelectedMusicItem">
+          <MusicItem music={music} isAdded={Boolean(selectedMusic[music.id])} />
+        </div>
       ))}
     </div>
   );

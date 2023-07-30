@@ -18,7 +18,9 @@ export const FoundedMusic = () => {
   return (
     <div data-testid="FoundedMusic">
       {music?.map((music) => (
-        <MusicItem music={music} isAdded={Boolean(selectedMusic[music.id])} />
+        <div data-testid="FoundedMusicItem">
+          <MusicItem music={music} isAdded={Boolean(selectedMusic[music.id])} />
+        </div>
       ))}
     </div>
   );

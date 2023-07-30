@@ -19,7 +19,11 @@ export const MusicItem = ({ music, isAdded }: MusicItemProps) => {
   return (
     <MusicItemEntity
       text={music.text}
-      rightAddon={<div onClick={handleSelectMusic}>{isAdded ? "remove" : "add"}</div>}
+      rightAddon={
+        <div data-testid="SelectMusicTrigger" onClick={handleSelectMusic}>
+          {isAdded ? "remove" : "add"}
+        </div>
+      }
     />
   );
 };
