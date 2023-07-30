@@ -26,31 +26,7 @@ import { getByTestId } from "cypress/helpers/getByTestId";
 
 //   // { fixture: "playlist.json" }
 //   it("pizda ebanaya", () => {
-//     cy.intercept("POST", "http://localhost:8000/playlist").as("post");
 
-//     cy.intercept("GET", "http://localhost:8000/playlist").as("call1");
-
-//     cy.visit("/about");
-
-//     cy.wait("@call1");
-
-//     cy.contains("cypress-piska-3").should("not.exist");
-
-//     cy.get(getByTestId("CreatePlaylistButton")).click();
-//     cy.get(getByTestId("CreatePlaylistNameInput")).type("cypress-piska-3");
-
-//     cy.get(getByTestId("CreatePlaylistSubmit")).click();
-
-//     cy.wait("@call1");
-//     cy.contains("cypress-piska-3").should("exist");
-//     cy.wait("@post").then((res) => {
-//       cy.request({
-//         url: `http://localhost:8000/playlist/${res.response?.body?.id}`,
-//         method: "DELETE",
-//         headers: res?.request?.headers,
-//       });
-//     });
-//   });
 // });
 
 // describe("test", () => {

@@ -14,7 +14,6 @@ describe("Articles", () => {
   it("work search", () => {
     cy.get(getByTestId("FiltersArtcilesSearch")).type("asdsasdadasdsasd");
     cy.get(getByTestId("ArticlesList")).should("exist");
-
     cy.get(getByTestId("ArticleItem")).should("have.length", 0);
   });
 });
