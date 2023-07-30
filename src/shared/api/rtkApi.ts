@@ -6,7 +6,7 @@ const baseURL = "http://localhost:8000";
 
 export const rtkApi = createApi({
   reducerPath: "api",
-  tagTypes: [tags.PLAYLIST_TAG],
+  tagTypes: [...Object.values(tags)],
   baseQuery: fetchBaseQuery({
     baseUrl: baseURL,
     prepareHeaders: (headers) => {

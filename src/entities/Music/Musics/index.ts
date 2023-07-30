@@ -7,3 +7,5 @@ export { fetchMusics } from "./model/services/fetchMusics";
 export { rootSelector as rootSelectorMusics } from "./model/selectors/rootSelector";
 
 export type { State as MusicsState } from "./model/types/State";
+
+export { useGetMusicQuery } from "./model/api/api";
