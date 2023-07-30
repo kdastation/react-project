@@ -1,6 +1,5 @@
 import { getByTestId } from "cypress/helpers/getByTestId";
-
-const api = "http://localhost:8000/";
+import { getUrl } from "cypress/helpers/getUrl";
 
 describe("Playlist", () => {
   it("create playlist", () => {
@@ -10,8 +9,6 @@ describe("Playlist", () => {
     cy.intercept("POST", "**/playlist").as("post");
 
     cy.intercept("GET", "**/playlist").as("call1");
-
-    cy.visit("/about");
 
     cy.wait("@call1");
 
@@ -26,7 +23,7 @@ describe("Playlist", () => {
     cy.contains("test-playlist").should("exist");
     cy.wait("@post").then((res) => {
       cy.request({
-        url: `http://localhost:8000/playlist/${res.response?.body?.id}`,
+        url: `${getUrl("/playlist")}/${res.response?.body?.id}`,
         method: "DELETE",
         headers: res?.request?.headers,
       });
