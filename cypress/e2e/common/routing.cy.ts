@@ -1,42 +1,5 @@
 import { getByTestId } from "cypress/helpers/getByTestId";
 
-// describe("User authorized", () => {
-//   // beforeEach(() => {
-//   //   cy.intercept("POST", "http://localhost:8000/playlist", (req) => {
-//   //     req.continue((res) => {
-//   //       cy.request({
-//   //         url: `http://localhost:8000/playlist/${res.body.id}`,
-//   //         method: "DELETE",
-//   //         headers: req.headers,
-//   //       });
-//   //     });
-//   //   });
-//   // });
-
-//   // afterEach(() => {
-//   //   const a = cy.readFile("cypress/fixtures/test.txt", {
-//   //     log: true,
-//   //   });
-
-//   //   cy.request({
-//   //     url: `http://localhost:8000/playlist/${a}`,
-//   //     method: "DELETE",
-//   //   });
-//   // });
-
-//   // { fixture: "playlist.json" }
-//   it("pizda ebanaya", () => {
-
-// });
-
-// describe("test", () => {
-//   it("test login", () => {
-//     cy.login({});
-
-//     cy.visit("/");
-//   });
-// });
-
 describe("Routing", () => {
   describe("Authorized user", () => {
     it("Visit profile page", () => {

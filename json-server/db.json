@@ -64,9 +64,7 @@
         "id": "1",
         "name": "admin"
       },
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -139,9 +137,7 @@
         "id": "1",
         "name": "admin"
       },
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": []
     },
     {
@@ -155,9 +151,7 @@
         "id": "1",
         "name": "admin"
       },
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": []
     }
   ],
@@ -185,210 +179,6 @@
     {
       "id": 3,
       "name": "phonk"
-    },
-    {
-      "name": "asdasdsad",
-      "id": 4
-    },
-    {
-      "name": "asd",
-      "id": 5
-    },
-    {
-      "name": "new play",
-      "id": 6
-    },
-    {
-      "name": "cypress",
-      "id": 7
-    },
-    {
-      "name": "cypress",
-      "id": 8
-    },
-    {
-      "name": "cypress",
-      "id": 9
-    },
-    {
-      "name": "cypress",
-      "id": 10
-    },
-    {
-      "name": "cypress",
-      "id": 11
-    },
-    {
-      "name": "cypress",
-      "id": 12
-    },
-    {
-      "name": "cypress",
-      "id": 13
-    },
-    {
-      "name": "cypress",
-      "id": 14
-    },
-    {
-      "name": "cypress",
-      "id": 15
-    },
-    {
-      "name": "cypress",
-      "id": 16
-    },
-    {
-      "name": "cypress",
-      "id": 17
-    },
-    {
-      "name": "cypress",
-      "id": 18
-    },
-    {
-      "name": "cypress",
-      "id": 19
-    },
-    {
-      "name": "cypress",
-      "id": 20
-    },
-    {
-      "name": "cypress",
-      "id": 21
-    },
-    {
-      "name": "cypress",
-      "id": 22
-    },
-    {
-      "name": "cypress",
-      "id": 23
-    },
-    {
-      "name": "cypress",
-      "id": 24
-    },
-    {
-      "name": "cypress",
-      "id": 25
-    },
-    {
-      "name": "cypress",
-      "id": 26
-    },
-    {
-      "name": "cypress",
-      "id": 27
-    },
-    {
-      "name": "cypress",
-      "id": 28
-    },
-    {
-      "name": "cypress",
-      "id": 29
-    },
-    {
-      "name": "cypress",
-      "id": 30
-    },
-    {
-      "name": "cypress",
-      "id": 31
-    },
-    {
-      "name": "cypress",
-      "id": 32
-    },
-    {
-      "name": "cypress",
-      "id": 33
-    },
-    {
-      "name": "cypress",
-      "id": 34
-    },
-    {
-      "name": "cypress",
-      "id": 35
-    },
-    {
-      "name": "cypress",
-      "id": 36
-    },
-    {
-      "name": "cypress",
-      "id": 37
-    },
-    {
-      "name": "cypress",
-      "id": 38
-    },
-    {
-      "name": "cypress",
-      "id": 39
-    },
-    {
-      "name": "cypress",
-      "id": 40
-    },
-    {
-      "name": "cypress",
-      "id": 41
-    },
-    {
-      "name": "cypress",
-      "id": 42
-    },
-    {
-      "name": "cypress",
-      "id": 43
-    },
-    {
-      "name": "cypress",
-      "id": 44
-    },
-    {
-      "name": "cypress",
-      "id": 45
-    },
-    {
-      "name": "cypress",
-      "id": 46
-    },
-    {
-      "name": "cypress",
-      "id": 47
-    },
-    {
-      "name": "cypress",
-      "id": 48
-    },
-    {
-      "name": "cypress",
-      "id": 49
-    },
-    {
-      "name": "cypress",
-      "id": 50
-    },
-    {
-      "name": "cypress",
-      "id": 51
-    },
-    {
-      "name": "cypress",
-      "id": 52
-    },
-    {
-      "name": "cypress-piska",
-      "id": 53
-    },
-    {
-      "name": "cypress-piska-2",
-      "id": 54
     }
   ]
 }
