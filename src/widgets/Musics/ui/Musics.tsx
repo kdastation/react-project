@@ -20,14 +20,14 @@ export const Musics = () => {
   return (
     <div>
       <DragDropMusics musics={musics}>
-        {musics.map((music) => (
+        {musics.map((music, index) => (
           <SortableItemRoot key={music.id} id={music.id}>
-            <div>
+            <div data-testid={`MusicItem-${index}`}>
               <MusicItem
                 text={music.text}
                 rightAddon={
                   <HStack gap="4">
-                    <TriggerDrag>drag</TriggerDrag>
+                    <TriggerDrag data-testid={`TriggerDrag-${index}`}>drag</TriggerDrag>
                     <DeleteMusicButton musicId={music.id} />
                   </HStack>
                 }

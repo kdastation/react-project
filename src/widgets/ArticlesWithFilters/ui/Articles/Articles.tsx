@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+
+import { ArticleItem, fetchArticles, rootSelectorArticles } from "@/entities/Article/Articles";
 import { fetchArticlesWithFilters } from "@/features/FiltersArticles";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { useVisibleObserver } from "@/shared/lib/hooks/useVisibleObserver/useVisibleObserver";
-import { ArticleItem, fetchArticles, rootSelectorArticles } from "@/entities/Article/Articles";
 
 export const Articles = () => {
   const dispatch = useAppDispatch();
@@ -39,7 +40,7 @@ export const Articles = () => {
   }
 
   return (
-    <div>
+    <div data-testid="ArticlesList">
       {articles.map((article) => (
         <ArticleItem key={article.id} article={article} />
       ))}
