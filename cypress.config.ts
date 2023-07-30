@@ -6,5 +6,8 @@ export default defineConfig({
       // implement node event listeners here
     },
     baseUrl: "http://localhost:3005",
+    env: {
+      serverApi: "http://localhost:8000",
+    },
   },
 });
