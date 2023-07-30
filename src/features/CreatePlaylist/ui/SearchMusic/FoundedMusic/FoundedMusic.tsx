@@ -5,7 +5,7 @@ import { useGetMusicQuery } from "@/entities/Music/Musics";
 import { rootSelector } from "../../../model/selectors/rootSelector";
 import { MusicItem } from "../../MusicItem/MusicItem";
 
-export const MusicList = () => {
+export const FoundedMusic = () => {
   const search = useSelector(rootSelector.selectSearchValue);
   const selectedMusic = useSelector(rootSelector.selectSelectedMusic);
 

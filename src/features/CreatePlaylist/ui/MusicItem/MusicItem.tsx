@@ -11,9 +11,11 @@ type MusicItemProps = {
 
 export const MusicItem = ({ music, isAdded }: MusicItemProps) => {
   const dispatch = useAppDispatch();
+
   const handleSelectMusic = () => {
     dispatch(actions.selectMusic(music));
   };
+
   return (
     <MusicItemEntity
       text={music.text}

@@ -5,7 +5,6 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 import { rootSelector } from "../../model/selectors/rootSelector";
 import { actions } from "../../model/slice/slice";
-import { MusicList } from "./MusicList/MusicList";
 
 export const SearchMusic = () => {
   const search = useSelector(rootSelector.selectSearchValue);
@@ -18,7 +17,6 @@ export const SearchMusic = () => {
   return (
     <div>
       <input type="text" value={search} onChange={handleSearch} />
-      <MusicList />
     </div>
   );
 };
