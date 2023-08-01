@@ -1,3 +1,6 @@
+import { ReactElement } from "react";
+import { useSelector } from "react-redux";
+
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -6,15 +9,25 @@ import { useBoolean } from "@/shared/lib/hooks/useBoolean";
 import { Modal } from "@/shared/ui/redesign/Modal";
 
 import { MODULE_NAME } from "../model/consts/moduleName";
+import { rootSelector } from "../model/selectors/rootSelector";
 import { reducer } from "../model/slice/slice";
-import { Form } from "./Form/Form";
+import { Screens } from "../model/types/State";
+import { MainScreen } from "./MainScreen/MainScreen";
+import { SearchMusicScreen } from "./SearchMusicScreen/SearchMusicScreen";
 
 const initialReducers: ReducersList = {
   [MODULE_NAME]: reducer,
 };
 
+const ScreensContent: Record<Screens, ReactElement> = {
+  main: <MainScreen />,
+  "search-music": <SearchMusicScreen />,
+};
+
 export const CreatePlaylist = () => {
   const [visible, setVisible] = useBoolean(false);
+
+  const screen = useSelector(rootSelector.selectScreen);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
@@ -23,7 +36,7 @@ export const CreatePlaylist = () => {
       </button>
 
       <Modal isOpen={visible} onClose={setVisible.off}>
-        <Form onSuccess={setVisible.off} />
+        {ScreensContent[screen]}
       </Modal>
     </DynamicModuleLoader>
   );
