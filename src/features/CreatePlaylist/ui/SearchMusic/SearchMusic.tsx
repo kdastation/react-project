@@ -2,6 +2,7 @@ import { ChangeEvent } from "react";
 import { useSelector } from "react-redux";
 
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { Input } from "@/shared/ui/redesign/Input";
 
 import { rootSelector } from "../../model/selectors/rootSelector";
 import { actions } from "../../model/slice/slice";
@@ -16,7 +17,13 @@ export const SearchMusic = () => {
 
   return (
     <div>
-      <input data-testid="SearchMusic" type="text" value={search} onChange={handleSearch} />
+      <Input
+        placeholder="Быстрый поиск"
+        data-testid="SearchMusic"
+        type="text"
+        value={search}
+        onChange={handleSearch}
+      />
     </div>
   );
 };

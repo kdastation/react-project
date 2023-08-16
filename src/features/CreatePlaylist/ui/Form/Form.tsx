@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Input } from "@/shared/ui/redesign/Input";
+
 import { useCreatePlaylistMutation } from "../../model/api/api";
 import { SearchMusic } from "../SearchMusic/SearchMusic";
 import { VisibleMusic } from "../VisibleMusic/VisibleMusic";
@@ -11,6 +13,7 @@ type FormProps = {
 
 export const Form = ({ onError, onSuccess }: FormProps) => {
   const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   const [createPlaylist, { isLoading }] = useCreatePlaylistMutation();
 
   const handleCreatePlaylist = async () => {
@@ -30,13 +33,22 @@ export const Form = ({ onError, onSuccess }: FormProps) => {
       Create new Playlist!
       {isLoading && <div>loading...</div>}
       <div>
-        <input
+        <Input
+          placeholder="Название плейлиста"
           data-testid="CreatePlaylistNameInput"
           type="text"
           onChange={(e) => {
             setName(e.target.value);
           }}
           value={name}
+        />
+        <Input
+          placeholder="Описание плейлиста"
+          type="text"
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
+          value={description}
         />
       </div>
       <SearchMusic />
