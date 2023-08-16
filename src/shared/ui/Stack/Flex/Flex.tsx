@@ -61,6 +61,7 @@ export const Flex: FC<FlexProps> = ({
   align = "start",
   max = false,
   children,
+  className,
   ...otherProps
 }) => {
   const classes = [
@@ -69,6 +70,7 @@ export const Flex: FC<FlexProps> = ({
     directionClasses[direction],
     wrapClasses[wrap],
     gap && gapClasses[gap],
+    className,
   ];
 
   const mods: Mods = {
@@ -76,7 +78,7 @@ export const Flex: FC<FlexProps> = ({
   };
 
   return (
-    <div className={classNames(styles.flex, mods, classes)} {...otherProps}>
+    <div {...otherProps} className={classNames(styles.flex, mods, classes)}>
       {children}
     </div>
   );
