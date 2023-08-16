@@ -33,7 +33,8 @@ export const Form = ({ onError, onSuccess }: FormProps) => {
 
   return (
     <div>
-      Create new Playlist!
+      <div className={styles.field_wrapper}>Create new Playlist!</div>
+
       {isLoading && <div>loading...</div>}
       <HStack className={styles.field_wrapper} gap="16">
         <div>Обложка</div>
