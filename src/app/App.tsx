@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <div className={classNames("app", {}, [theme])}>
+    <div id="app" className={classNames("app", {}, [theme])}>
       {isLoading ? (
         <div>loading... </div>
       ) : (

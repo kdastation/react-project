@@ -1,7 +1,7 @@
 @import "@/shared/lib/scss/remCalc";
 
 .container {
-  background-color: #f8f8f8;
+  background-color: var(--bg-color-modal);
   max-height: rem-calc(700);
   border-radius: rem-calc(16);
   border: rem-calc(1) solid rgb(0 0 0 / 60%);
