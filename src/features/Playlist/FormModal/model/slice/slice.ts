@@ -3,8 +3,8 @@ import { Music } from "@/entities/Music";
 
 import { MODULE_NAME } from "../consts/moduleName";
 import { State } from "../types/State";
-import { Screens } from "@/features/Playlist/FormModal/model/types/Screens";
-import { FormValues } from "@/features/Playlist/FormModal/model/types/FormValues";
+import { Screens } from "../types/Screens";
+import { FormValues } from "../types/FormValues";
 
 const initialState: State = {
   searchMusic: "",
@@ -36,6 +36,12 @@ export const slice = createSlice({
     },
     setName(state, { payload }: PayloadAction<FormValues["name"]>) {
       state.form.name = payload;
+    },
+    setInitialValuesForm(state, { payload = {} }: PayloadAction<DeepPartial<FormValues>>) {
+      state.form = {
+        ...initialState.form,
+        ...payload,
+      };
     },
   },
 });

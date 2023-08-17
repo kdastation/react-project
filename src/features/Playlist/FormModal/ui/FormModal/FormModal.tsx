@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { rootSelector } from "../../model/selectors/rootSelector";
 import { OnSaveArgs } from "../../model/types/OnSaveArgs";
 import { Screens } from "../../model/types/Screens";
@@ -11,25 +11,38 @@ import {
   ReducersList,
 } from "@/shared/components/DynamicModuleLoader/DynamicModuleLoader";
 import { MODULE_NAME } from "../../model/consts/moduleName";
-import { reducer } from "../../model/slice/slice";
+import { actions, reducer } from "../../model/slice/slice";
+import { FormValues } from "../../model/types/FormValues";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 type Props = {
   onSave?: (args: OnSaveArgs) => void;
   visible?: boolean;
   onClose?: () => void;
+  initialValues?: DeepPartial<FormValues>;
 };
 
 const initialReducers: ReducersList = {
   [MODULE_NAME]: reducer,
 };
 
-export const FormModal = ({ onSave, onClose = () => {}, visible = false }: Props) => {
+export const FormModal = ({
+  onSave,
+  onClose = () => {},
+  visible = false,
+  initialValues = {},
+}: Props) => {
+  const dispatch = useAppDispatch();
   const screen = useSelector(rootSelector.selectScreen);
 
   const screens: Record<Screens, ReactNode> = {
     main: <MainScreen onSave={onSave} />,
     "search-music": <SearchMusicScreen />,
   };
+
+  useEffect(() => {
+    dispatch(actions.setInitialValuesForm(initialValues));
+  }, []);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
