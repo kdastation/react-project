@@ -21,16 +21,16 @@ import {
   AddCommentForArticleState,
   MODULE_NAME_ADD_COMMENT_FOR_ARTICLE,
 } from "@/features/AddComment/addCommentForArticle";
-import { CreatePlaylistState, MODULE_NAME_CREATE_PLAYLIST } from "@/features/CreatePlaylist";
 import { DeleteMusicState, MODULE_NAME_DELETE_MUSIC } from "@/features/DeleteMusic";
 import {
   EditableProfileCardSliceState,
   MODULE_NAME_EDITABLE_PROFILE_CARD,
 } from "@/features/EditableProfileCard";
 import { FiltersArticlesState, MODULE_NAME_FILTERS_ARTICLES } from "@/features/FiltersArticles";
-import { LoginByUserNameSliceState } from "@/features/LoginByUserName/index";
 import { ChangeOrderMusicState, MODULE_NAME_CHANGE_ORDER_MUSICS } from "@/features/OrderMusics";
 import { rtkApi } from "@/shared/api/rtkApi";
+import { FormPlaylistState, MODULE_NAME_FORM_PLAYLIST } from "@/features/Playlist/FormModal";
+import { LoginByUserNameSliceState } from "@/features/LoginByUserName";
 
 export type State = {
   user: UserSliceState;
@@ -38,7 +38,7 @@ export type State = {
 
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState;
-  [MODULE_NAME_CREATE_PLAYLIST]?: CreatePlaylistState;
+  [MODULE_NAME_FORM_PLAYLIST]?: FormPlaylistState;
   [MODULE_NAME_EDITABLE_PROFILE_CARD]: EditableProfileCardSliceState;
   [MODULE_NAME_ARTICLE]: ArticleState;
   [MODULE_NAME_ARTICLE_COMMENTS]: ArticleCommentsState;

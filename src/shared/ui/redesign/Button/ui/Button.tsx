@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-
 import { ButtonProps } from "@/shared/types/ButtonProps";
 
 type Props = ButtonProps;

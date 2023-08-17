@@ -1,4 +1,4 @@
-import { CreatePlaylist } from "@/features/CreatePlaylist";
+import { CreatePlaylist } from "@/features/Playlist/CreatePlaylist";
 import { Musics } from "@/widgets/Musics";
 import { Playlists } from "@/widgets/Playlists";
 
