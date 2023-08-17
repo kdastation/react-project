@@ -1,5 +1,6 @@
 import { useGetPlaylistsQuery } from "@/entities/Playlist";
 import { HStack } from "@/shared/ui/Stack";
+import { EditPlaylist } from "@/features/Playlist/EditPlaylist";
 
 export const Playlists = () => {
   const { data: playlists, isLoading } = useGetPlaylistsQuery();
@@ -11,7 +12,10 @@ export const Playlists = () => {
   return (
     <HStack gap="4">
       {playlists.map((playlist) => (
-        <div key={playlist.id}>{playlist.name}</div>
+        <div>
+          <div key={playlist.id}>{playlist.name}</div>
+          <EditPlaylist id={playlist.id} />
+        </div>
       ))}
     </HStack>
   );
