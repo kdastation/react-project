@@ -46,7 +46,7 @@ export const FormModal = ({
 
   useEffect(() => {
     dispatch(actions.setInitialValuesForm(initialValues));
-  }, [initialValues]);
+  }, []);
 
   if (!visible) {
     return null;

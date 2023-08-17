@@ -12,8 +12,8 @@ export const Playlists = () => {
   return (
     <HStack gap="4">
       {playlists.map((playlist) => (
-        <div>
-          <div key={playlist.id}>{playlist.name}</div>
+        <div key={playlist.id}>
+          <div>{playlist.name}</div>
           <EditPlaylist id={playlist.id} />
         </div>
       ))}

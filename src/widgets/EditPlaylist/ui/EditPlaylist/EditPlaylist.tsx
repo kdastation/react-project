@@ -11,12 +11,14 @@ export const EditPlaylist = ({ id }: Props) => {
   return (
     <>
       <button onClick={setVisible.on}>Редактировать</button>
-      <EditPlaylistModal
-        onClose={setVisible.off}
-        visible={visible}
-        id={id}
-        leftAddon={<DeletePlaylist id={id} onSuccess={setVisible.off} />}
-      />
+      {visible && (
+        <EditPlaylistModal
+          onClose={setVisible.off}
+          visible={visible}
+          id={id}
+          leftAddon={<DeletePlaylist id={id} onSuccess={setVisible.off} />}
+        />
+      )}
     </>
   );
 };
