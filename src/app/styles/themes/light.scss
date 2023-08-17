@@ -1,17 +1,13 @@
 .app.light {
   --gray-750: #424242;
-
   --bg-color: #eee4e4;
   --inverted-bg-color: #090303;
   --primary-color: #312e2eff;
   --secondary-color: #252525;
   --inverted-primary-color: #ccc4c4;
   --inverted-secondary-color: #95e1f8;
-
   --bg-color-modal: #292929;
-  --primary-text-color: #E1E3E6;
-
-  --color-field-border-alpha: rgba(255, 255, 255, 0.12);
-
+  --primary-text-color: #e1e3e6;
+  --color-field-border-alpha: rgb(255 255 255 / 12%);
   --separator-common: var(--gray-750);
 }
