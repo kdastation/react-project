@@ -16,7 +16,12 @@ export const CreatePlaylist = () => {
   return (
     <>
       <button onClick={setVisible.on}>create playlist</button>
-      <FormModal visible={visible} onClose={setVisible.off} onSave={handleCreatePlaylist} />
+      <FormModal
+        title="Создание нового плейлиста"
+        visible={visible}
+        onClose={setVisible.off}
+        onSave={handleCreatePlaylist}
+      />
     </>
   );
 };

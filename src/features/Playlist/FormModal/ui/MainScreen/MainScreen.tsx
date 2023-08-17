@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, ReactNode, useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./MainScreen.module.scss";
 import { HStack, VStack } from "@/shared/ui/Stack";
@@ -12,8 +12,10 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 type Props = {
   onSave?: (args: { name: string }) => void;
+  title: string;
+  leftAddon?: ReactNode;
 };
-export const MainScreen = ({ onSave }: Props) => {
+export const MainScreen = ({ onSave, title, leftAddon }: Props) => {
   const dispatch = useAppDispatch();
   const name = useSelector(rootSelector.selectName);
   const [description, setDescription] = useState("");
@@ -27,7 +29,7 @@ export const MainScreen = ({ onSave }: Props) => {
 
   return (
     <div>
-      <div className={styles.field_wrapper}>Create new Playlist!</div>
+      <div className={styles.field_wrapper}>{title}</div>
       <HStack className={styles.field_wrapper} gap="16">
         <div>Обложка</div>
         <VStack gap="16" max>
@@ -57,7 +59,8 @@ export const MainScreen = ({ onSave }: Props) => {
       <div className={styles.field_wrapper}>
         <VisibleMusic />
       </div>
-      <HStack className={styles.controls} justify="end">
+      <HStack className={styles.controls} justify="between">
+        {leftAddon && <div>{leftAddon}</div>}
         <button
           data-testid="CreatePlaylistSubmit"
           // disabled={isLoading}

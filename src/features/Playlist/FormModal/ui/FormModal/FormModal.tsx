@@ -20,6 +20,8 @@ type Props = {
   visible?: boolean;
   onClose?: () => void;
   initialValues?: DeepPartial<FormValues>;
+  title: string;
+  leftAddon?: ReactNode;
 };
 
 const initialReducers: ReducersList = {
@@ -31,12 +33,14 @@ export const FormModal = ({
   onClose = () => {},
   visible = false,
   initialValues = {},
+  title,
+  leftAddon,
 }: Props) => {
   const dispatch = useAppDispatch();
   const screen = useSelector(rootSelector.selectScreen);
 
   const screens: Record<Screens, ReactNode> = {
-    main: <MainScreen onSave={onSave} />,
+    main: <MainScreen onSave={onSave} title={title} leftAddon={leftAddon} />,
     "search-music": <SearchMusicScreen />,
   };
 

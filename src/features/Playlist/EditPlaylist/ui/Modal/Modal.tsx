@@ -16,6 +16,7 @@ export const Modal = ({ visible, onClose, id }: Props) => {
 
   return (
     <FormModal
+      title="Редактирование плейлиста"
       visible={visible}
       onClose={onClose}
       initialValues={{
