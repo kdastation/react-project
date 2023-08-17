@@ -1,12 +1,12 @@
 import { useGetPlaylistsQuery } from "@/entities/Playlist";
 import { HStack } from "@/shared/ui/Stack";
-import { EditPlaylist } from "@/widgets/EditPlaylist/";
+import { EditPlaylist } from "@/widgets/EditPlaylist";
 
 export const Playlists = () => {
-  const { data: playlists, isLoading } = useGetPlaylistsQuery();
+  const { data: playlists = [], isLoading } = useGetPlaylistsQuery();
 
-  if (!playlists) {
-    return <div>error</div>;
+  if (isLoading) {
+    return <div>loading...</div>;
   }
 
   return (
