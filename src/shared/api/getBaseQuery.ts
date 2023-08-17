@@ -8,12 +8,6 @@ export type BaseQueryArgs<Meta> = {
 
 export type ArgsBaseQuery = ArgsApi;
 
-/**
- * Кастомной апи для rtk query
- * (аналог базового fetchBaseQuery)
- * https://redux-toolkit.js.org/rtk-query/api/fetchBaseQuery
- * @param meta
- */
 export const getBaseQuery =
   <
     Args extends ArgsBaseQuery = ArgsBaseQuery,

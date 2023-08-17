@@ -27,7 +27,6 @@ export const getResponse = async <Result>({
     baseURL: host,
     url,
   });
-  console.log(response);
   return {
     result: response.data as Result,
     response,
