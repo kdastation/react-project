@@ -3,14 +3,13 @@ import "./styles/index.scss";
 import { useEffect, useState } from "react";
 
 import { AppRouter } from "@/app/providers/AppRouter";
-import { useTheme } from "@/app/providers/ThemeProvider";
 import { userActions } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { Header } from "@/widgets/Header";
 
 function App() {
-  const { theme } = useTheme();
+  const theme = "dark";
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div className={classNames("app", {}, [theme])}>
+    <div id="app" className={classNames("app", {}, [theme])}>
       {isLoading ? (
         <div>loading... </div>
       ) : (

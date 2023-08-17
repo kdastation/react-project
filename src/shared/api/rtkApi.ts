@@ -1,18 +1,11 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi } from "@reduxjs/toolkit/query/react";
 
+import { ArgsBaseQuery, getBaseQuery } from "./getBaseQuery";
 import { tags } from "./tags";
-
-const baseURL = "http://localhost:8000";
 
 export const rtkApi = createApi({
   reducerPath: "api",
-  tagTypes: [tags.PLAYLIST_TAG],
-  baseQuery: fetchBaseQuery({
-    baseUrl: baseURL,
-    prepareHeaders: (headers) => {
-      headers.set("Authorization", "lol");
-      return headers;
-    },
-  }),
+  tagTypes: [...Object.values(tags)],
+  baseQuery: getBaseQuery<ArgsBaseQuery>(),
   endpoints: (builder) => ({}),
 });

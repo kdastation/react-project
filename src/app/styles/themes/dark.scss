@@ -1,4 +1,6 @@
 .app.dark {
+  --gray-750: #424242;
+  --gray-850: #292929;
   --bg-color: #090303;
   --inverted-bg-color: #eee4e4;
   --primary-color: #ccc4c4;
@@ -7,4 +9,9 @@
   --inverted-secondary-color: #252525;
   --dark-bg: #090f11;
   --text: #dbdbdb;
+  --bg-color-modal: var(--gray-850);
+  --primary-text-color: #e1e3e6;
+  --color-field-border-alpha: rgb(255 255 255 / 12%);
+  --separator-common: var(--gray-750);
+  --modal-card-background: var(--gray-850);
 }

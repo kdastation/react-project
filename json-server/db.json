@@ -64,7 +64,9 @@
         "id": "1",
         "name": "admin"
       },
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -137,7 +139,9 @@
         "id": "1",
         "name": "admin"
       },
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": []
     },
     {
@@ -151,7 +155,9 @@
         "id": "1",
         "name": "admin"
       },
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": []
     }
   ],
@@ -179,6 +185,22 @@
     {
       "id": 3,
       "name": "phonk"
+    },
+    {
+      "name": "asdad",
+      "id": 4
+    },
+    {
+      "name": "qweqeqe",
+      "id": 5
+    },
+    {
+      "name": "new playlist",
+      "id": 6
+    },
+    {
+      "name": "asdadasda",
+      "id": 7
     }
   ]
 }
