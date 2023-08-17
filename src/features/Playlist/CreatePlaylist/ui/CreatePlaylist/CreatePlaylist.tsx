@@ -1,5 +1,5 @@
 import { useBoolean } from "@/shared/lib/hooks/useBoolean";
-import { FormModal, OnSaveArgs } from "@/features/Playlist/FormModal";
+import { FormModal, FormValues } from "@/features/Playlist/FormModal";
 import { useCreatePlaylistMutation } from "../../model/api/api";
 
 export const CreatePlaylist = () => {
@@ -7,7 +7,7 @@ export const CreatePlaylist = () => {
 
   const [createPlaylist, { isLoading }] = useCreatePlaylistMutation();
 
-  const handleCreatePlaylist = async ({ name }: OnSaveArgs) => {
+  const handleCreatePlaylist = async ({ name }: FormValues) => {
     await createPlaylist({
       name,
     });

@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode, useState } from "react";
+import { ChangeEvent, ReactNode } from "react";
 import { useSelector } from "react-redux";
 import styles from "./MainScreen.module.scss";
 import { HStack, VStack } from "@/shared/ui/Stack";
@@ -9,22 +9,28 @@ import { VisibleMusic } from "../VisibleMusic/VisibleMusic";
 import { rootSelector } from "../../model/selectors/rootSelector";
 import { actions } from "../../model/slice/slice";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { FormValues } from "../../model/types/FormValues";
 
 type Props = {
-  onSave?: (args: { name: string }) => void;
+  onSave?: (args: FormValues) => void;
   title: string;
   leftAddon?: ReactNode;
 };
 export const MainScreen = ({ onSave, title, leftAddon }: Props) => {
   const dispatch = useAppDispatch();
   const name = useSelector(rootSelector.selectName);
-  const [description, setDescription] = useState("");
+  const description = useSelector(rootSelector.selectDescription);
 
   const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(actions.setName(event.target.value));
   };
+
+  const handleChangeDescription = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(actions.setDescription(event.target.value));
+  };
+
   const handleSave = () => {
-    onSave?.({ name });
+    onSave?.({ name, description });
   };
 
   return (
@@ -43,9 +49,7 @@ export const MainScreen = ({ onSave, title, leftAddon }: Props) => {
           <Input
             placeholder="Описание плейлиста"
             type="text"
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
+            onChange={handleChangeDescription}
             value={description}
           />
         </VStack>

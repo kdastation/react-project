@@ -4,4 +4,4 @@ export type { State as FormPlaylistState } from "@/features/Playlist/FormModal/m
 
 export { FormModal } from "./ui/FormModal/FormModal";
 
-export type { OnSaveArgs } from "./model/types/OnSaveArgs";
+export type { FormValues } from "./model/types/FormValues";

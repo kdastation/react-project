@@ -2,12 +2,9 @@ import { rtkApi, tags } from "@/shared/api";
 import { Id } from "@/shared/types/Id";
 import { Playlist } from "@/entities/Playlist";
 
-type Args = {
-  name: string;
-};
 export const api = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    editPlaylist: build.mutation<Playlist, DeepPartial<Args> & { id: Id }>({
+    editPlaylist: build.mutation<Playlist, DeepPartial<Playlist> & { id: Id }>({
       query: ({ id, ...body }) => ({
         url: `/playlist/${id}`,
         method: "PUT",

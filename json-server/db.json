@@ -176,19 +176,18 @@
   "playlist": [
     {
       "name": "rap 2 ",
+      "description": "desc 1",
       "id": 1
     },
     {
       "id": 2,
-      "name": "popular"
-    },
-    {
-      "name": "edit playlist 5",
-      "id": 6
+      "name": "popular",
+      "description": "desc 1"
     },
     {
       "name": "asdadasda",
-      "id": 7
+      "id": 7,
+      "description": "desc 1"
     }
   ]
 }

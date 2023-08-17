@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { ReactNode, useEffect } from "react";
 import { rootSelector } from "../../model/selectors/rootSelector";
-import { OnSaveArgs } from "../../model/types/OnSaveArgs";
 import { Screens } from "../../model/types/Screens";
 import { MainScreen } from "../MainScreen/MainScreen";
 import { SearchMusicScreen } from "../SearchMusicScreen/SearchMusicScreen";
@@ -16,7 +15,7 @@ import { FormValues } from "../../model/types/FormValues";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 type Props = {
-  onSave?: (args: OnSaveArgs) => void;
+  onSave?: (args: FormValues) => void;
   visible?: boolean;
   onClose?: () => void;
   initialValues?: DeepPartial<FormValues>;
