@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
+
 export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -15,38 +17,23 @@ export default {
 
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
-  testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '\\\\node_modules\\\\',
-  ],
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node',
-  ],
-  moduleDirectories: [
-    'node_modules',
-  ],
+  testEnvironment: "jsdom",
+  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
+  moduleDirectories: ["node_modules"],
 
-  modulePaths: [
-    '<rootDir>src',
-  ],
+  modulePaths: ["<rootDir>src"],
 
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
+  testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
 
-  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
 
   moduleNameMapper: {
-    '\\.(s?css)$': 'identity-obj-proxy',
-    '^@/(.*)$': '<rootDir>/src/$1',
+    "\\.(s?css)$": "identity-obj-proxy",
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 
-  rootDir: '../../',
+  rootDir: "../../",
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -118,12 +105,15 @@ export default {
 
   // Use this configuration option to add custom reporters to Jest
   reporters: [
-    'default',
-    ['jest-html-reporters', {
-      publicPath: '<rootDir>/reports/unit',
-      filename: 'report.html',
-      openReport: true,
-    }],
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "<rootDir>/reports/unit",
+        filename: "report.html",
+        openReport: true,
+      },
+    ],
   ],
 
   // Automatically reset mock state before every test
@@ -191,7 +181,10 @@ export default {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {
+    "\\.[jt]sx?$": "babel-jest",
+    "^.+\\.svg$": path.resolve(__dirname, "fileTransform.js"),
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
