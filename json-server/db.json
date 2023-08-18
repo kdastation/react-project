@@ -175,18 +175,9 @@
   ],
   "playlist": [
     {
-      "name": "new playlist 1",
-      "description": "asdad",
+      "name": "asdasdsad",
+      "description": "",
       "id": 1
-    },
-    {
-      "name": "rap",
-      "id": 2
-    },
-    {
-      "name": "phonk",
-      "description": "hard phonk",
-      "id": 3
     }
   ]
 }

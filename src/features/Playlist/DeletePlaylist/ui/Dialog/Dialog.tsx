@@ -13,6 +13,7 @@ export const Dialog = ({ visible, onClose, id, onSuccess }: Props) => {
 
   const handleDeletePlaylist = async () => {
     await deletePlaylist(id);
+    onClose();
     onSuccess?.();
   };
 
