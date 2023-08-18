@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { Modal, ModalProps } from "../Modal/Modal";
+import { Modal, ModalProps } from "../../Modal/Modal";
 import { HStack, VStack } from "@/shared/ui/Stack";
-import styles from "./InfoDiagol.module.scss";
+import styles from "../Diagol/Diagol.module.scss";
 
 type Props = Omit<ModalProps, "closeIcon"> & {
   text: ReactNode;

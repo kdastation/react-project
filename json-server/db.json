@@ -173,16 +173,5 @@
       "order": 3
     }
   ],
-  "playlist": [
-    {
-      "name": "rap 2 ",
-      "description": "desc 1",
-      "id": 1
-    },
-    {
-      "name": "popularasd",
-      "description": "desc 1asdasdasdasdasdadasdadasdad",
-      "id": 2
-    }
-  ]
+  "playlist": []
 }
