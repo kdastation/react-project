@@ -173,5 +173,20 @@
       "order": 3
     }
   ],
-  "playlist": []
+  "playlist": [
+    {
+      "name": "new playlist 1",
+      "description": "asdad",
+      "id": 1
+    },
+    {
+      "name": "rap",
+      "id": 2
+    },
+    {
+      "name": "phonk",
+      "description": "hard phonk",
+      "id": 3
+    }
+  ]
 }

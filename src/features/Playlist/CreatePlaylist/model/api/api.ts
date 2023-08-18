@@ -2,9 +2,7 @@ import { Playlist } from "@/entities/Playlist";
 import { tags } from "@/shared/api";
 import { rtkApi } from "@/shared/api/rtkApi";
 
-type Args = {
-  name: string;
-};
+type Args = DeepPartial<Omit<Playlist, "id" | "name">> & Pick<Playlist, "name">;
 
 const api = rtkApi.injectEndpoints({
   endpoints: (build) => ({
