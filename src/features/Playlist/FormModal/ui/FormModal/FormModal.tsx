@@ -4,7 +4,7 @@ import { rootSelector } from "../../model/selectors/rootSelector";
 import { Screens } from "../../model/types/Screens";
 import { MainScreen } from "../MainScreen/MainScreen";
 import { SearchMusicScreen } from "../SearchMusicScreen/SearchMusicScreen";
-import { Modal } from "@/shared/ui/redesign/Modal";
+import { Modal } from "@/shared/ui/redesign/Popups";
 import {
   DynamicModuleLoader,
   ReducersList,

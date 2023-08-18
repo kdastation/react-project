@@ -1,4 +1,4 @@
-import { Overlay, OverlayProps } from "../Overlay/Overlay";
+import { Overlay, OverlayProps } from "@/shared/ui/redesign/Popups/ui/Overlay/Overlay";
 import styles from "./Modal.module.scss";
 
 type ModalProps = Pick<OverlayProps, "isOpen" | "onClose" | "children">;
