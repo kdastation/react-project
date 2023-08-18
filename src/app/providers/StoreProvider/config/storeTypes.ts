@@ -31,10 +31,12 @@ import { ChangeOrderMusicState, MODULE_NAME_CHANGE_ORDER_MUSICS } from "@/featur
 import { rtkApi } from "@/shared/api/rtkApi";
 import { FormPlaylistState, MODULE_NAME_FORM_PLAYLIST } from "@/features/Playlist/FormModal";
 import { LoginByUserNameSliceState } from "@/features/LoginByUserName";
+import { MODULE_NAME_PLAYER, PLayerState } from "@/entities/Player";
 
 export type State = {
   user: UserSliceState;
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
+  [MODULE_NAME_PLAYER]: PLayerState;
 
   // Асинхронные редьюсеры
   loginByUserName?: LoginByUserNameSliceState;

@@ -18,6 +18,7 @@ import { editableProfileCardReducer } from "@/features/EditableProfileCard/model
 import { filtersArticlesReducer, MODULE_NAME_FILTERS_ARTICLES } from "@/features/FiltersArticles";
 import { changeOrderMusicReducer, MODULE_NAME_CHANGE_ORDER_MUSICS } from "@/features/OrderMusics";
 import { rtkApi } from "@/shared/api/rtkApi";
+import { MODULE_NAME_PLAYER, playerReducer } from "@/entities/Player";
 
 export const rootReducer: ReducersMapObject<State> = {
   [MODULE_NAME_USER_SLICE]: userReducer,
@@ -31,6 +32,7 @@ export const rootReducer: ReducersMapObject<State> = {
   [MODULE_NAME_CHANGE_ORDER_MUSICS]: changeOrderMusicReducer,
   [MODULE_NAME_DELETE_MUSIC]: deleteMusicReducer,
   [rtkApi.reducerPath]: rtkApi.reducer,
+  [MODULE_NAME_PLAYER]: playerReducer,
 };
 
 export type KeysReducers = keyof ReducersMapObject<State>;

@@ -8,6 +8,7 @@ import { DragDropMusics } from "@/features/OrderMusics";
 import { SortableItemRoot, TriggerDrag } from "@/shared/components/DragDrop";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { HStack } from "@/shared/ui/Stack";
+import { TogglePlaying } from "@/entities/Player";
 
 export const Musics = () => {
   const dispatch = useAppDispatch();
@@ -27,6 +28,7 @@ export const Musics = () => {
                 text={music.text}
                 rightAddon={
                   <HStack gap="4">
+                    <TogglePlaying url={music.url} />
                     <TriggerDrag data-testid={`TriggerDrag-${index}`}>drag</TriggerDrag>
                     <DeleteMusicButton musicId={music.id} />
                   </HStack>
