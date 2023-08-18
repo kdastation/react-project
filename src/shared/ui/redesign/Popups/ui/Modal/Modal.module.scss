@@ -10,6 +10,7 @@
 
   // padding: rem-calc(10);
   z-index: 2;
+  position: relative;
 }
 
 .title {
@@ -23,4 +24,21 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   border-bottom: 1px solid var(--separator-common);
+}
+
+.close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  opacity: 0.75;
+  color: var(--color-icon-medium);
+  cursor: pointer;
+  outline: 0;
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    opacity: 1;
+  }
 }
