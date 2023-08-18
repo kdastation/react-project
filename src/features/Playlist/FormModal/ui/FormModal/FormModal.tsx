@@ -13,6 +13,7 @@ import { MODULE_NAME } from "../../model/consts/moduleName";
 import { actions, reducer } from "../../model/slice/slice";
 import { FormValues } from "../../model/types/FormValues";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { Back } from "../Back/Back";
 
 type Props = {
   onSave?: (args: FormValues) => void;
@@ -45,7 +46,7 @@ export const FormModal = ({
       </Modal>
     ),
     "search-music": (
-      <Modal isOpen={visible} onClose={onClose}>
+      <Modal title={<Back />} isOpen={visible} onClose={onClose}>
         <SearchMusicScreen />
       </Modal>
     ),
