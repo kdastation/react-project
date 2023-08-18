@@ -1,10 +1,16 @@
+import { ReactNode } from "react";
 import { Overlay, OverlayProps } from "@/shared/ui/redesign/Popups/ui/Overlay/Overlay";
 import styles from "./Modal.module.scss";
 
-type ModalProps = Pick<OverlayProps, "isOpen" | "onClose" | "children">;
+export type ModalProps = Pick<OverlayProps, "isOpen" | "onClose" | "children"> & {
+  title?: ReactNode;
+};
 
-export const Modal = ({ children, ...props }: ModalProps) => (
+export const Modal = ({ children, title, ...props }: ModalProps) => (
   <Overlay {...props}>
-    <div className={styles.container}>{children}</div>
+    <div className={styles.container}>
+      {title && <div className={styles.title}>{title}</div>}
+      {children}
+    </div>
   </Overlay>
 );

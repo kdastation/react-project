@@ -39,8 +39,16 @@ export const FormModal = ({
   const screen = useSelector(rootSelector.selectScreen);
 
   const screens: Record<Screens, ReactNode> = {
-    main: <MainScreen onSave={onSave} title={title} leftAddon={leftAddon} />,
-    "search-music": <SearchMusicScreen />,
+    main: (
+      <Modal title={title} isOpen={visible} onClose={onClose}>
+        <MainScreen onSave={onSave} leftAddon={leftAddon} />
+      </Modal>
+    ),
+    "search-music": (
+      <Modal isOpen={visible} onClose={onClose}>
+        <SearchMusicScreen />
+      </Modal>
+    ),
   };
 
   useEffect(() => {
@@ -51,11 +59,5 @@ export const FormModal = ({
     return null;
   }
 
-  return (
-    <DynamicModuleLoader reducers={initialReducers}>
-      <Modal isOpen={visible} onClose={onClose}>
-        {screens[screen]}
-      </Modal>
-    </DynamicModuleLoader>
-  );
+  return <DynamicModuleLoader reducers={initialReducers}>{screens[screen]}</DynamicModuleLoader>;
 };

@@ -11,3 +11,16 @@
   // padding: rem-calc(10);
   z-index: 2;
 }
+
+.title {
+  height: 54px;
+  padding-left: 25px;
+  padding-right: 54px;
+  font-size: 14px;
+  color: var(--primary-text-color);
+  line-height: 54px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--separator-common);
+}

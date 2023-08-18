@@ -13,10 +13,9 @@ import { FormValues } from "../../model/types/FormValues";
 
 type Props = {
   onSave?: (args: FormValues) => void;
-  title: string;
   leftAddon?: ReactNode;
 };
-export const MainScreen = ({ onSave, title, leftAddon }: Props) => {
+export const MainScreen = ({ onSave, leftAddon }: Props) => {
   const dispatch = useAppDispatch();
   const name = useSelector(rootSelector.selectName);
   const description = useSelector(rootSelector.selectDescription);
@@ -35,7 +34,6 @@ export const MainScreen = ({ onSave, title, leftAddon }: Props) => {
 
   return (
     <div>
-      <div className={styles.field_wrapper}>{title}</div>
       <HStack className={styles.field_wrapper} gap="16">
         <div>Обложка</div>
         <VStack gap="16" max>
