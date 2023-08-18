@@ -3,6 +3,7 @@ import { MusicItem as MusicItemEntity } from "@/entities/Music/Musics";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 
 import { actions } from "../../model/slice/slice";
+import { TogglePlaying } from "@/entities/Player";
 
 type MusicItemProps = {
   music: Music;
@@ -20,8 +21,11 @@ export const MusicItem = ({ music, isAdded }: MusicItemProps) => {
     <MusicItemEntity
       text={music.text}
       rightAddon={
-        <div data-testid="SelectMusicTrigger" onClick={handleSelectMusic}>
-          {isAdded ? "remove" : "add"}
+        <div>
+          <TogglePlaying url={music.url} />
+          <div data-testid="SelectMusicTrigger" onClick={handleSelectMusic}>
+            {isAdded ? "remove" : "add"}
+          </div>
         </div>
       }
     />
