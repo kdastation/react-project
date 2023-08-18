@@ -2,6 +2,7 @@ import { tags } from "@/shared/api";
 import { rtkApi } from "@/shared/api/rtkApi";
 
 import { Playlist } from "../types/Playlist";
+import { Id } from "@/shared/types/Id";
 
 export const api = rtkApi.injectEndpoints({
   endpoints: (build) => ({
@@ -17,7 +18,13 @@ export const api = rtkApi.injectEndpoints({
             ]
           : [{ type: tags.PLAYLIST_TAG, id: "LIST" }],
     }),
+    getPlaylist: build.query<Playlist, Id>({
+      query: (id) => ({
+        url: `/playlist/${id}`,
+      }),
+      providesTags: (result, error, id) => [{ type: tags.PLAYLIST_TAG, id }],
+    }),
   }),
 });
 
-export const { useGetPlaylistsQuery } = api;
+export const { useGetPlaylistsQuery, useGetPlaylistQuery } = api;

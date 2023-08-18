@@ -1,0 +1,44 @@
+@import "@/shared/lib/scss/remCalc";
+
+.container {
+  background-color: var(--bg-color-modal);
+  max-height: rem-calc(700);
+  border-radius: rem-calc(16);
+  border: rem-calc(1) solid rgb(0 0 0 / 60%);
+  box-shadow: 0 rem-calc(10) rem-calc(40) rgb(0 0 0 / 10%);
+  width: rem-calc(440);
+
+  // padding: rem-calc(10);
+  z-index: 2;
+  position: relative;
+}
+
+.title {
+  height: 54px;
+  padding-left: 25px;
+  padding-right: 54px;
+  font-size: 14px;
+  color: var(--primary-text-color);
+  line-height: 54px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--separator-common);
+}
+
+.close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  opacity: 0.75;
+  color: var(--color-icon-medium);
+  cursor: pointer;
+  outline: 0;
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    opacity: 1;
+  }
+}

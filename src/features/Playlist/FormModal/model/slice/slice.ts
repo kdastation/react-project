@@ -12,6 +12,7 @@ const initialState: State = {
   sreen: "main",
   form: {
     name: "",
+    description: "",
   },
 };
 
@@ -36,6 +37,9 @@ export const slice = createSlice({
     },
     setName(state, { payload }: PayloadAction<FormValues["name"]>) {
       state.form.name = payload;
+    },
+    setDescription(state, { payload }: PayloadAction<FormValues["description"]>) {
+      state.form.description = payload;
     },
     setInitialValuesForm(state, { payload = {} }: PayloadAction<DeepPartial<FormValues>>) {
       state.form = {

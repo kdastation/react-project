@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, ReactNode } from "react";
 import { useSelector } from "react-redux";
 import styles from "./MainScreen.module.scss";
 import { HStack, VStack } from "@/shared/ui/Stack";
@@ -9,25 +9,31 @@ import { VisibleMusic } from "../VisibleMusic/VisibleMusic";
 import { rootSelector } from "../../model/selectors/rootSelector";
 import { actions } from "../../model/slice/slice";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { FormValues } from "../../model/types/FormValues";
 
 type Props = {
-  onSave?: (args: { name: string }) => void;
+  onSave?: (args: FormValues) => void;
+  leftAddon?: ReactNode;
 };
-export const MainScreen = ({ onSave }: Props) => {
+export const MainScreen = ({ onSave, leftAddon }: Props) => {
   const dispatch = useAppDispatch();
   const name = useSelector(rootSelector.selectName);
-  const [description, setDescription] = useState("");
+  const description = useSelector(rootSelector.selectDescription);
 
   const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(actions.setName(event.target.value));
   };
+
+  const handleChangeDescription = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(actions.setDescription(event.target.value));
+  };
+
   const handleSave = () => {
-    onSave?.({ name });
+    onSave?.({ name, description });
   };
 
   return (
     <div>
-      <div className={styles.field_wrapper}>Create new Playlist!</div>
       <HStack className={styles.field_wrapper} gap="16">
         <div>Обложка</div>
         <VStack gap="16" max>
@@ -41,9 +47,7 @@ export const MainScreen = ({ onSave }: Props) => {
           <Input
             placeholder="Описание плейлиста"
             type="text"
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
+            onChange={handleChangeDescription}
             value={description}
           />
         </VStack>
@@ -57,7 +61,8 @@ export const MainScreen = ({ onSave }: Props) => {
       <div className={styles.field_wrapper}>
         <VisibleMusic />
       </div>
-      <HStack className={styles.controls} justify="end">
+      <HStack className={styles.controls} justify="between">
+        {leftAddon && <div>{leftAddon}</div>}
         <button
           data-testid="CreatePlaylistSubmit"
           // disabled={isLoading}
