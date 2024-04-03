@@ -42,10 +42,10 @@ jobs:
       - name: Create dir
         run: |
           cd kek
-          mkdir sosat
+          mkdir ${{github.sha}}
         if: always()
       - name: move loki
-        run: mv .loki kek/sosat/
+        run: mv .loki kek/${{github.sha}}/
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
