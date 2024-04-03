@@ -39,6 +39,9 @@ jobs:
       - name: Generate HTML report
         run: npm run visual-report
         if: always()
+      - name: move loki
+        run: mv .loki kek/epta/
+        if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
         if: always()
@@ -46,7 +49,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: '.loki'
+          path: 'kek'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
