@@ -39,3 +39,6 @@ export const Musics = () => {
     </div>
   );
 };
+
+
+console.error('asdasd')
