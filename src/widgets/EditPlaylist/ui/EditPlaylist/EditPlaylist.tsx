@@ -22,3 +22,5 @@ export const EditPlaylist = ({ id }: Props) => {
     </>
   );
 };
+
+console.error('asdasdsa')
