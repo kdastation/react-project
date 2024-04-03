@@ -39,8 +39,13 @@ jobs:
       - name: Generate HTML report
         run: npm run visual-report
         if: always()
+      - name: Create dir
+        run: |
+          cd kek
+          mkdir sosat
+        if: always()
       - name: move loki
-        run: mv .loki kek/epta/
+        run: mv .loki kek/sosat/
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -54,3 +59,25 @@ jobs:
         id: deployment
         if: always()
         uses: actions/deploy-pages@v1
+
+
+
+
+
+
+
+name: mkdir example
+
+on:
+  push:
+    branches: [ '**' ]
+
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
