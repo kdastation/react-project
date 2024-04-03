@@ -60,3 +60,6 @@ export const DragDropMusics: FC<DragDropMusicsProps> = ({ musics, children }) =>
     </DndContext>
   );
 };
+
+
+console.error('aasdasdad')
