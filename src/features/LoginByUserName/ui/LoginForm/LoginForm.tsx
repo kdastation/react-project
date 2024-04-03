@@ -65,7 +65,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onSuccess }) => {
           value={password}
         />
         <Button data-testid="SumbitLoginButton" onClick={handleLogin}>
-          asdasdasdsadasdasdasda
+          Войти
         </Button>
       </div>
     </DynamicModuleLoader>
