@@ -13,3 +13,6 @@ export const ArticlePage = () => {
     </div>
   );
 };
+
+
+console.error('asdasd')

@@ -22,7 +22,7 @@ export const Primary: ComponentStory<typeof Button> = (
 );
 
 Primary.args = {
-  children: 'asdsadad',
+  children: 'sadasdasdasd',
 };
 
 export const Clear: ComponentStory<typeof Button> = (
