@@ -37,3 +37,5 @@ export const AddCommentForm: FC<AddCommentFormProps> = ({
     </div>
   );
 };
+
+console.error('dasdsadsa')
